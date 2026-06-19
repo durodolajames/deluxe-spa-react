@@ -1,0 +1,11 @@
+{
+  "models": [
+    {
+      "title": "Kimi",
+      "provider": "openai",
+      "apiBase": "https://api.moonshot.cn/v1",
+      "apiKey": "sk-YgBu30qDX2hIjqdMPCLvRVzh4gY4HbnS9aoef9Dz4evY20pQ",
+      "model": "kimi-for-coding"
+    }
+  ]
+}

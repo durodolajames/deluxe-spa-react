@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -19,6 +19,11 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { count, setIsOpen } = useCart();
   const pathname = usePathname();
+
+  useEffect(() => {
+    setMobileOpen(false);
+    setIsOpen(false);
+  }, [pathname, setIsOpen]);
 
   return (
     <>

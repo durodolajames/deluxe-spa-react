@@ -5,13 +5,60 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const galleryItems = Array.from({ length: 8 }, (_, index) => ({
-  id: index + 1,
-  src: "/images/mainlogo.png",
-  alt: `Gallery image ${index + 1}`,
-}));
+const galleryItems = [
+  {
+    id: 1,
+    src: "/images/facial1_gsap.jpeg",
+    alt: "Facial treatment result",
+  },
+  {
+    id: 2,
+    src: "/images/Wax.jpeg",
+    alt: "Wax treatment result",
+  },
+  {
+    id: 3,
+    src: "/images/Facial_gsap.jpeg",
+    alt: "Facial glow result",
+  },
+  {
+    id: 4,
+    src: "/images/iv_image.webp",
+    alt: "IV therapy session",
+  },
+  {
+    id: 5,
+    src: "/images/neckwax_gsap.jpeg",
+    alt: "Neck wax treatment result",
+  },
+  {
+    id: 6,
+    src: "/images/wax0_gsap.jpeg",
+    alt: "Wax treatment close-up",
+  },
+  {
+    id: 7,
+    src: "/images/Facial_after2.jpeg",
+    alt: "Facial after result 2",
+  },
+  {
+    id: 8,
+    src: "/images/Facial_after.jpeg",
+    alt: "Facial after result 1",
+  },
+];
 
-export default function HorizontalGallery() {
+type GalleryItem = {
+  id: number | string;
+  src: string;
+  alt: string;
+};
+
+type HorizontalGalleryProps = {
+  items?: GalleryItem[];
+};
+
+export default function HorizontalGallery({ items = galleryItems }: HorizontalGalleryProps) {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
 
@@ -50,7 +97,7 @@ export default function HorizontalGallery() {
     <div className="gallery-section-inner" ref={sectionRef}>
       <div className="gallery-scroller">
         <div className="gallery-track" ref={trackRef}>
-          {galleryItems.map((item) => (
+          {items.map((item) => (
             <article className="gallery-card" key={item.id}>
               <div className="gallery-image">
                 <Image src={item.src} alt={item.alt} fill className="object-cover" />

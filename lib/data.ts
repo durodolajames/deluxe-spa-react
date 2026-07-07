@@ -19,18 +19,22 @@ export interface ServiceCategory {
 }
 
 export const products: Product[] = [
-  { id: 101, name: "Intense Lightening Black Soap", price: 7000, category: "Body Lotions", description: "Deep cleansing black soap for radiant skin", image: "/images/Pro.jpeg" },
-  { id: 102, name: "Intense Lightening Body Lotion", price: 12000, category: "Body Lotions", description: "Intensive body lightening formula", image: "/images/Pro1.jpeg" },
-  { id: 103, name: "Intense Lightening Body Scrub", price: 6500, category: "Body Lotions", description: "Exfoliating scrub for smooth skin", image: "/images/Pro3.jpeg" },
-  { id: 104, name: "Lightening Body Lotion", price: 7000, category: "Body Lotions", description: "Daily lightening body moisturizer", image: "/images/Pro4.jpeg" },
-  { id: 201, name: "Lightening Face Wash", price: 5500, category: "Face Care", description: "Gentle face cleanser for bright skin" },
-  { id: 202, name: "Lightening Oil", price: 7500, category: "Face Care", description: "Nourishing facial oil" },
-  { id: 203, name: "Purifying Face Mask", price: 6500, category: "Face Care", description: "Deep cleansing clay mask" },
-  { id: 204, name: "Deluxe Face Serum", price: 7500, category: "Face Care", description: "Concentrated brightening serum" },
-  { id: 301, name: "Stretch Mark Cream", price: 4000, category: "Body Care", description: "Targeted stretch mark treatment" },
-  { id: 302, name: "Stretch Mark Cream (Variant)", price: 4000, category: "Body Care", description: "Enhanced stretch mark formula" },
-  { id: 303, name: "Tamarind Extract Bar Soap", price: 1500, category: "Body Care", description: "Natural tamarind soap" },
-  { id: 304, name: "Triple Delight Body Wash", price: 7000, category: "Body Care", description: "Luxurious triple-action body wash" },
+  { id: 101, name: "Triple Delight Glutathione Body Lotion", price: 18000, category: "Body Lotions", description: "Rich glutathione lotion for visibly brighter skin", image: "/images/Pro.jpeg" },
+  { id: 102, name: "Brightening Body Milk Lotion", price: 10000, category: "Body Lotions", description: "Lightweight daily body milk that boosts glow", image: "/images/Pro1.jpeg" },
+  { id: 103, name: "Intense Lightening Lotion", price: 25500, category: "Body Lotions", description: "Targeted intensive lotion for uneven skin tone", image: "/images/Pro3.jpeg" },
+  { id: 104, name: "Lightening Body Lotion", price: 15000, category: "Body Lotions", description: "Moisturizing body lotion with brightening support", image: "/images/Pro4.jpeg" },
+  { id: 201, name: "Lightening Face Wash", price: 10000, category: "Face Care", description: "Gentle cleanser for clearer, brighter skin" },
+  { id: 202, name: "Day Face Cream", price: 10000, category: "Face Care", description: "Hydrating daytime cream for daily radiance" },
+  { id: 203, name: "Night Face Cream", price: 10000, category: "Face Care", description: "Overnight nourishing cream for skin renewal" },
+  { id: 204, name: "Acne Face Wash", price: 10000, category: "Face Care", description: "Clarifying wash formulated for acne-prone skin" },
+  { id: 205, name: "Lightening Oil", price: 15000, category: "Face Care", description: "Nourishing brightening oil for glow support" },
+  { id: 301, name: "Triple Delight Body Wash", price: 15000, category: "Body Care", description: "Refreshing body wash for soft, clean skin" },
+  { id: 302, name: "Glow Oil (200ml)", price: 10000, category: "Body Care", description: "Large-size glow oil for long-lasting sheen" },
+  { id: 303, name: "Glow Oil (100ml)", price: 5000, category: "Body Care", description: "Travel-size glow oil for everyday use" },
+  { id: 304, name: "Deep Lightening Body Scrub", price: 8000, category: "Body Care", description: "Deep exfoliating scrub to smooth rough areas" },
+  { id: 305, name: "Advance Lightening Liquid Black Soap", price: 10000, category: "Body Care", description: "Liquid black soap for deep cleansing and brightening" },
+  { id: 306, name: "Intense Lightening Black Soap", price: 10000, category: "Body Care", description: "Traditional black soap for a brighter complexion" },
+  { id: 307, name: "Intense Lightening Scrub", price: 10500, category: "Body Care", description: "Polishing scrub for improved texture and tone" },
 ];
 
 export const serviceCategories: ServiceCategory[] = [

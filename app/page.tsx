@@ -66,15 +66,6 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="hero-aside">
-              <div className="hero-aside-card" style={{
-                backgroundImage: 'url(/images/Hero.jpeg)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat'
-              }}>
-              </div>
-            </div>
           </div>
         </div>
         <a href="#services" className="hero-scroll scroll-indicator" aria-label="Scroll to services">
@@ -82,6 +73,20 @@ export default function HomePage() {
             <polyline points="6 9 12 15 18 9" />
           </svg>
         </a>
+      </section>
+
+      {/* Before / After */}
+      <section className="section before-after-section">
+        <div className="container">
+          <div className="section-header">
+            <span className="label-lg section-label fade-up d1">Client Results</span>
+            <h2 className="headline-md section-title fade-up d2">Before &amp; After Transformations</h2>
+            <p className="body-md section-text fade-up d3">
+              Slide to compare treatment progress and see how consistent care delivers visible skin improvement.
+            </p>
+          </div>
+          <BeforeAfterSlider cases={beforeAfterCases} enableSessionShuffle />
+        </div>
       </section>
 
       {/* Post-Hero Feature Grid */}
@@ -96,13 +101,10 @@ export default function HomePage() {
           <div className="medspa-grid">
             <div className="medspa-card medspa-card-strong medspa-card-showcase fade-up d2">
               <div className="medspa-icon">🏥</div>
-              <h3>Advanced Aesthetic Treatments</h3>
-              <p>Botox®, dermal fillers, skin rejuvenation, IV therapy, weight management, laser treatments, body contouring, and customized wellness plans all designed around your goals.</p>
-            </div>
-            <div className="medspa-card medspa-card-soft fade-up d3">
-              <div className="medspa-icon">🤍</div>
-              <h3>Trusted Medical Excellence</h3>
-              <p>Our licensed providers use evidence-based techniques and industry-leading technology to deliver safe, effective, and natural-looking outcomes.</p>
+              <div className="medspa-card-copy">
+                <h3>Advanced Aesthetic Treatments</h3>
+                <p>Skin rejuvenation, IV therapy, weight management, laser treatments, body contouring, and customized wellness plans all designed around your goals.</p>
+              </div>
             </div>
             <div className="medspa-card medspa-card-image fade-up d4">
               <div className="medspa-card-image-copy">
@@ -112,20 +114,6 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Before / After */}
-      <section className="section before-after-section">
-        <div className="container">
-          <div className="section-header">
-            <span className="label-lg section-label fade-up d1">Client Results</span>
-            <h2 className="headline-md section-title fade-up d2">Before &amp; After Transformations</h2>
-            <p className="body-md section-text fade-up d3">
-              Slide to compare treatment progress and see how consistent care delivers visible skin improvement.
-            </p>
-          </div>
-          <BeforeAfterSlider cases={beforeAfterCases} enableSessionShuffle />
         </div>
       </section>
 
@@ -322,19 +310,38 @@ export default function HomePage() {
             <h2 className="headline-md section-title fade-up d2">Questions about products and services</h2>
             <p className="body-md section-text fade-up d3">Everything you need to know before booking a treatment or selecting your skincare routine.</p>
           </div>
-          <div className="faq-grid">
-            <details className="faq-item fade-up d1">
-              <summary>Can I use the products after my treatment?</summary>
-              <p>Yes. We recommend following the product routine suggested by your clinician to support healing, extend treatment results, and maintain skin health.</p>
-            </details>
-            <details className="faq-item fade-up d2">
-              <summary>How do I choose between services and products?</summary>
-              <p>Start with a consultation if you want a personalized plan. Products are ideal for follow-up care and daily maintenance after treatment.</p>
-            </details>
-            <details className="faq-item fade-up d3">
-              <summary>Do you offer online product consultations?</summary>
-              <p>Yes. Our team can guide you remotely through product selection and treatment prep, so you feel confident before you book.</p>
-            </details>
+          <div className="faq-layout">
+            <div className="faq-image-wrap fade-up d3">
+              <Image
+                src="/images/showcase.jpeg"
+                alt="Deluxe Skin Care FAQ"
+                width={1600}
+                height={900}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
+            </div>
+            <div className="faq-grid">
+              <details className="faq-item fade-up d1" name="home-faq">
+                <summary>Can I use the products after my treatment?</summary>
+                <p>Yes. We recommend following the product routine suggested by your clinician to support healing, extend treatment results, and maintain skin health.</p>
+              </details>
+              <details className="faq-item fade-up d2" name="home-faq">
+                <summary>How do I choose between services and products?</summary>
+                <p>Start with a consultation if you want a personalized plan. Products are ideal for follow-up care and daily maintenance after treatment.</p>
+              </details>
+              <details className="faq-item fade-up d3" name="home-faq">
+                <summary>Do you offer online product consultations?</summary>
+                <p>Yes. Our team can guide you remotely through product selection and treatment prep, so you feel confident before you book.</p>
+              </details>
+              <details className="faq-item fade-up d4" name="home-faq">
+                <summary>How soon will I see results after a facial treatment?</summary>
+                <p>Some clients notice an immediate glow, while deeper improvements like texture and tone balancing may take a few sessions depending on your skin goals.</p>
+              </details>
+              <details className="faq-item fade-up d5" name="home-faq">
+                <summary>Can I combine multiple treatments in one visit?</summary>
+                <p>In many cases, yes. Your specialist will recommend safe treatment combinations based on your skin condition and recovery needs.</p>
+              </details>
+            </div>
           </div>
         </div>
       </section>

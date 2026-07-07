@@ -1,16 +1,96 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import HorizontalGallery from '@/components/HorizontalGallery';
+
+const aboutGalleryItems = [
+  { id: 1, src: '/images/1.jpeg', alt: 'Deluxe gallery image 1' },
+  { id: 2, src: '/images/2.jpeg', alt: 'Deluxe gallery image 2' },
+  { id: 3, src: '/images/3.jpeg', alt: 'Deluxe gallery image 3' },
+  { id: 4, src: '/images/4.jpeg', alt: 'Deluxe gallery image 4' },
+  { id: 5, src: '/images/5.jpeg', alt: 'Deluxe gallery image 5' },
+  { id: 6, src: '/images/6.jpeg', alt: 'Deluxe gallery image 6' },
+  { id: 7, src: '/images/7.jpeg', alt: 'Deluxe gallery image 7' },
+  { id: 8, src: '/images/8.jpeg', alt: 'Deluxe gallery image 8' },
+  { id: 9, src: '/images/9.jpeg', alt: 'Deluxe gallery image 9' },
+  { id: 'hero', src: '/images/Hero.jpeg', alt: 'Deluxe hero gallery image' },
+];
 
 export default function AboutPage() {
   return (
     <>
-      <section className="section" style={{ paddingTop: 48 }}>
+      <section className="section about-intro-section">
+        <div className="container">
+          <div className="about-intro-grid">
+            <div className="about-intro-copy fade-up d1">
+              <span className="label-lg" style={{ color: 'var(--primary)', display: 'inline-block', marginBottom: 16 }}>Who We Are</span>
+              <h1 className="headline-lg" style={{ marginBottom: 24, color: 'var(--deep-espresso)' }}>Where expertise meets the art of skincare.</h1>
+              <p className="body-md" style={{ color: 'var(--on-surface-variant)', marginBottom: 20 }}>
+                At Deluxe Skin Care, we deliver clinical-grade skincare treatments and bespoke facials tailored to your skin needs. Every experience is designed to restore, rejuvenate, and illuminate your skin while still feeling deeply relaxing and personal.
+              </p>
+              <div className="about-intro-stats">
+                <div>
+                  <div className="about-intro-stat-value">15+</div>
+                  <div className="label-sm about-intro-stat-label">Service Categories</div>
+                </div>
+                <div>
+                  <div className="about-intro-stat-value">100+</div>
+                  <div className="label-sm about-intro-stat-label">Treatments Offered</div>
+                </div>
+                <div>
+                  <div className="about-intro-stat-value">20+</div>
+                  <div className="label-sm about-intro-stat-label">Premium Products</div>
+                </div>
+              </div>
+              <Link href="#our-story" className="btn about-intro-btn">Our Story</Link>
+            </div>
+
+            <div className="about-intro-visual fade-up d2">
+              <div className="about-intro-image-wrap">
+                <Image
+                  src="/images/About.jpeg"
+                  alt="Spa treatment room"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 45vw"
+                  style={{ objectFit: 'cover' }}
+                />
+                <div className="about-intro-overlay">
+                  <p className="about-intro-overlay-top">Clinical Precision</p>
+                  <p className="about-intro-overlay-title">Skin</p>
+                  <p className="about-intro-overlay-bottom">Science-backed. Results-driven.</p>
+                </div>
+              </div>
+
+              <div className="about-intro-card">
+                <p className="about-intro-card-label">Clients Served</p>
+                <p className="about-intro-card-value">600+</p>
+                <p className="about-intro-card-text">Across UK, US &amp; Nigeria</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="our-story" className="section" style={{ paddingTop: 48 }}>
         <div className="container">
           <div className="about-grid">
-            <div className="about-image fade-up">
-              <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', color: '#7f7669', padding: 48, textAlign: 'center' }}>
-                <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 48, fontWeight: 600, color: 'var(--primary)', marginBottom: 16 }}>D</div>
-                <p style={{ fontSize: 14, lineHeight: 1.7 }}>Deluxe Skin Care</p>
-                <p style={{ fontSize: 12, color: 'var(--outline)', marginTop: 8 }}>Luxury Med Spa & Skincare</p>
+            <div className="about-image about-image-stack fade-up">
+              <div className="about-image-main">
+                <Image
+                  src="/images/deluxe.jpeg"
+                  alt="Deluxe Skin Care treatment room"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 45vw"
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
+              <div className="about-image-float">
+                <Image
+                  src="/images/deluxe_certificate.jpeg"
+                  alt="Deluxe Skin Care certification"
+                  fill
+                  sizes="(max-width: 768px) 42vw, 20vw"
+                  style={{ objectFit: 'cover' }}
+                />
               </div>
             </div>
             <div className="fade-up">
@@ -29,6 +109,10 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="section gallery-section">
+        <HorizontalGallery items={aboutGalleryItems} />
       </section>
 
       <section className="section bg-champagne">
@@ -65,18 +149,42 @@ export default function AboutPage() {
 
       <section className="section">
         <div className="container">
-          <div className="grid-3" style={{ textAlign: 'center' }}>
-            <div className="fade-up d1">
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: 48, fontWeight: 600, color: 'var(--primary)', marginBottom: 8 }}>15+</div>
-              <div className="label-sm" style={{ color: 'var(--on-surface-variant)' }}>Service Categories</div>
+          <div className="section-header">
+            <span className="label-lg section-label fade-up d1">FAQ</span>
+            <h2 className="headline-md section-title fade-up d2">Common questions about Deluxe Skin Care</h2>
+            <p className="body-md section-text fade-up d3">Helpful answers about consultations, treatment planning, and what to expect at your first visit.</p>
+          </div>
+          <div className="faq-layout">
+            <div className="faq-image-wrap fade-up d3">
+              <Image
+                src="/images/showcase.jpeg"
+                alt="Deluxe Skin Care FAQ"
+                width={1600}
+                height={900}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
             </div>
-            <div className="fade-up d2">
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: 48, fontWeight: 600, color: 'var(--primary)', marginBottom: 8 }}>100+</div>
-              <div className="label-sm" style={{ color: 'var(--on-surface-variant)' }}>Treatments Offered</div>
-            </div>
-            <div className="fade-up d3">
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: 48, fontWeight: 600, color: 'var(--primary)', marginBottom: 8 }}>12</div>
-              <div className="label-sm" style={{ color: 'var(--on-surface-variant)' }}>Premium Products</div>
+            <div className="faq-grid">
+              <details className="faq-item fade-up d1" name="about-faq">
+                <summary>Do I need a consultation before booking a treatment?</summary>
+                <p>Yes. We recommend starting with a consultation so our specialists can assess your skin and create a treatment plan tailored to your goals.</p>
+              </details>
+              <details className="faq-item fade-up d2" name="about-faq">
+                <summary>Are your treatments suitable for sensitive skin?</summary>
+                <p>Many of our treatments can be adapted for sensitive skin. We review your skin history first and adjust products and intensity for safety and comfort.</p>
+              </details>
+              <details className="faq-item fade-up d3" name="about-faq">
+                <summary>How often should I come in for best results?</summary>
+                <p>Frequency depends on your treatment type and skin condition. Most clients begin with a short corrective plan, then move to regular maintenance sessions.</p>
+              </details>
+              <details className="faq-item fade-up d4" name="about-faq">
+                <summary>What should I do before my first appointment?</summary>
+                <p>Please arrive with clean skin, avoid harsh exfoliants for 24 hours, and share your skincare history so we can plan your treatment safely.</p>
+              </details>
+              <details className="faq-item fade-up d5" name="about-faq">
+                <summary>Do you offer guidance for home skincare routines?</summary>
+                <p>Yes. After your consultation or treatment, we provide clear product and routine recommendations to support your results at home.</p>
+              </details>
             </div>
           </div>
         </div>

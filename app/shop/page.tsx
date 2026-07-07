@@ -97,23 +97,6 @@ export default function ShopPage() {
           </div>
         ))}
 
-        {/* Delivery Info */}
-        <div className="bg-champagne" style={{ borderRadius: 'var(--radius-lg)', padding: 32, textAlign: 'center', marginTop: 48 }}>
-          <h3 className="headline-sm" style={{ marginBottom: 12 }}>Delivery Information</h3>
-          <p className="body-md" style={{ color: 'var(--on-surface-variant)', maxWidth: 600, margin: '0 auto' }}>
-            We deliver across Lagos. Select your location at checkout for accurate shipping rates.
-          </p>
-          <div className="grid-2" style={{ marginTop: 24, maxWidth: 500, marginLeft: 'auto', marginRight: 'auto' }}>
-            <div style={{ textAlign: 'center', padding: 16, background: 'var(--surface-container-lowest)', borderRadius: 'var(--radius-md)' }}>
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: 20, fontWeight: 600, color: 'var(--primary)' }}>₦2,500</div>
-              <div style={{ fontSize: 13, color: 'var(--on-surface-variant)', marginTop: 4 }}>Mainland Delivery</div>
-            </div>
-            <div style={{ textAlign: 'center', padding: 16, background: 'var(--surface-container-lowest)', borderRadius: 'var(--radius-md)' }}>
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: 20, fontWeight: 600, color: 'var(--primary)' }}>₦4,000</div>
-              <div style={{ fontSize: 13, color: 'var(--on-surface-variant)', marginTop: 4 }}>Island Delivery</div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -5,11 +5,11 @@ export function useScrollReveal() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const targets = document.querySelectorAll('.fade-up');
+    const observed = new WeakSet<Element>();
 
     if (!('IntersectionObserver' in window)) {
       // Fallback: just show everything immediately
-      targets.forEach((el) => el.classList.add('visible'));
+      document.querySelectorAll('.fade-up').forEach((el) => el.classList.add('visible'));
       return;
     }
 
@@ -27,15 +27,44 @@ export function useScrollReveal() {
       { threshold: 0.15 } // matches the default
     );
 
-    targets.forEach((el) => observer.observe(el));
+    const observeFadeTargets = (root: ParentNode = document) => {
+      root.querySelectorAll('.fade-up').forEach((el) => {
+        if (observed.has(el)) return;
+        observed.add(el);
+        observer.observe(el);
+      });
+    };
+
+    observeFadeTargets();
 
     // Trigger a fresh check after route transitions so newly rendered
     // elements animate without requiring a hard refresh.
     requestAnimationFrame(() => {
-      targets.forEach((el) => observer.observe(el));
+      observeFadeTargets();
+    });
+
+    const mutationObserver = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        mutation.addedNodes.forEach((node) => {
+          if (!(node instanceof Element)) return;
+          if (node.classList.contains('fade-up')) {
+            if (!observed.has(node)) {
+              observed.add(node);
+              observer.observe(node);
+            }
+          }
+          observeFadeTargets(node);
+        });
+      }
+    });
+
+    mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true,
     });
 
     return () => {
+      mutationObserver.disconnect();
       observer.disconnect();
     };
   }, [pathname]);

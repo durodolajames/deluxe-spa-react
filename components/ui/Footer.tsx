@@ -17,6 +17,8 @@ export default function Footer() {
               <li><Link href="/shop">Shop</Link></li>
               <li><Link href="/about">About</Link></li>
               <li><Link href="/contact">Contact</Link></li>
+              <li><Link href="/privacy-policy">Privacy Policy</Link></li>
+              <li><Link href="/terms">Terms &amp; Conditions</Link></li>
             </ul>
           </div>
           <div>
@@ -39,7 +41,11 @@ export default function Footer() {
         </div>
         <div className="footer-bottom">
           <span>© 2026 Deluxe Skin Care. All rights reserved.</span>
-          <span>Designed with care in Lagos</span>
+          <span>
+            <Link href="/privacy-policy">Privacy Policy</Link>
+            {' '}|{' '}
+            <Link href="/terms">Terms &amp; Conditions</Link>
+          </span>
         </div>
       </div>
     </footer>

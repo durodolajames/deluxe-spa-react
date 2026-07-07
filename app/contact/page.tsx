@@ -1,16 +1,9 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function ContactPage() {
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   return (
     <section className="section" style={{ paddingTop: 48 }}>
       <div className="container">
@@ -30,31 +23,42 @@ export default function ContactPage() {
               </div>
               <div className="contact-item-text">
                 <strong>Phone</strong>
-                <span>+234 800 000 0000</span>
+                <a href="tel:09076860852">09076860852</a>
               </div>
             </div>
 
             <div className="contact-item fade-up d2">
               <div className="contact-item-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17.6 6.32A7.95 7.95 0 0 0 12 4a8 8 0 0 0-6.93 12L4 20l4.1-1.08A8 8 0 1 0 17.6 6.32z"></path><path d="M8.5 10.5c.3 1.2 1.8 2.7 3 3 .6.2 1-.1 1.3-.5l.4-.6"></path></svg>
               </div>
               <div className="contact-item-text">
-                <strong>Email</strong>
-                <span>hello@deluxeskincare.ng</span>
+                <strong>WhatsApp</strong>
+                <a href="https://wa.me/2349076860852" target="_blank" rel="noopener noreferrer">09076860852</a>
               </div>
             </div>
 
             <div className="contact-item fade-up d3">
               <div className="contact-item-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
               </div>
               <div className="contact-item-text">
-                <strong>Location</strong>
-                <span>Lagos, Nigeria</span>
+                <strong>Email</strong>
+                <a href="mailto:info@deluxeskincare.com.ng">info@deluxeskincare.com.ng</a>
               </div>
             </div>
 
             <div className="contact-item fade-up d4">
+              <div className="contact-item-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div className="contact-item-text">
+                <strong>Address</strong>
+                <a href="https://www.google.com/maps/search/?api=1&query=Block+95+plot+5A+Omorinre+Johnson+street+off+bisola+durosimi+etti+street+off+admiralty+way+Lekki+Phase1+Lagos" target="_blank" rel="noopener noreferrer"><strong>Location 1:</strong> Block 95 plot 5A Omorinre Johnson street off bisola durosimi etti street off admiralty way Lekki Phase1, Lagos</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=55+Rasheed+Alaba+Williams+Street+Lekki+Phase+I+Lekki+Lagos" target="_blank" rel="noopener noreferrer"><strong>Location 2:</strong> 55 Rasheed Alaba Williams Street, Lekki Phase I, Lekki, Lagos</a>
+              </div>
+            </div>
+
+            <div className="contact-item fade-up d5">
               <div className="contact-item-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
               </div>
@@ -64,7 +68,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="fade-up d5" style={{ marginTop: 32, padding: 24, background: 'var(--champagne)', borderRadius: 'var(--radius-lg)' }}>
+            <div className="fade-up d6" style={{ marginTop: 32, padding: 24, background: 'var(--champagne)', borderRadius: 'var(--radius-lg)' }}>
               <h4 style={{ fontFamily: 'var(--font-display)', fontSize: 18, fontWeight: 600, marginBottom: 12, color: 'var(--deep-espresso)' }}>Book a Consultation</h4>
               <p style={{ fontSize: 14, color: 'var(--on-surface-variant)', lineHeight: 1.6, marginBottom: 16 }}>Not sure which treatment is right for you? Our skincare specialists will assess your skin and recommend the perfect regimen.</p>
               <Link href="/services" className="btn btn-primary btn-sm">Browse Services</Link>
@@ -72,49 +76,17 @@ export default function ContactPage() {
           </div>
 
           <div className="contact-form fade-up d2">
-            {submitted ? (
-              <div className="fade-up" style={{ textAlign: 'center', padding: '48px 24px' }}>
-                <div className="success-icon" style={{ margin: '0 auto 24px', width: 64, height: 64 }}>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                </div>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 24, fontWeight: 600, marginBottom: 12, color: 'var(--deep-espresso)' }}>Message Sent!</h3>
-                <p style={{ color: 'var(--on-surface-variant)', fontSize: 14 }}>Thank you for reaching out. We&apos;ll get back to you within 24 hours.</p>
-              </div>
-            ) : (
-              <>
-                <h3 className="fade-up d1" style={{ fontFamily: 'var(--font-display)', fontSize: 24, fontWeight: 600, marginBottom: 24, color: 'var(--deep-espresso)' }}>Send a Message</h3>
-                <form onSubmit={handleSubmit}>
-                  <div className="form-group fade-up d1">
-                    <label htmlFor="name">Full Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your full name" required />
-                  </div>
-                  <div className="form-group fade-up d2">
-                    <label htmlFor="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="your@email.com" required />
-                  </div>
-                  <div className="form-group fade-up d3">
-                    <label htmlFor="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="+234 800 000 0000" required />
-                  </div>
-                  <div className="form-group fade-up d4">
-                    <label htmlFor="subject">Subject</label>
-                    <select id="subject" name="subject" required>
-                      <option value="">Select a subject</option>
-                      <option value="consultation">Book a Consultation</option>
-                      <option value="service">Service Inquiry</option>
-                      <option value="product">Product Inquiry</option>
-                      <option value="feedback">Feedback</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                  <div className="form-group fade-up d5">
-                    <label htmlFor="message">Message</label>
-                    <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
-                  </div>
-                  <button type="submit" className="btn btn-primary fade-up d5" style={{ width: '100%' }}>Send Message</button>
-                </form>
-              </>
-            )}
+            <h3 className="fade-up d1" style={{ fontFamily: 'var(--font-display)', fontSize: 24, fontWeight: 600, marginBottom: 24, color: 'var(--deep-espresso)' }}>Visit Deluxe Skincare</h3>
+            <div className="fade-up d2" style={{ overflow: 'hidden', borderRadius: 'var(--radius-lg)' }}>
+              <Image
+                src="/images/deluxe.jpeg"
+                alt="Deluxe Skincare"
+                width={900}
+                height={1100}
+                style={{ width: '100%', height: 'auto', display: 'block' }}
+                priority
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -354,11 +354,11 @@ export default function HomePage() {
           <div className="faq-layout">
             <div className="faq-image-wrap fade-up d3">
               <Image
-                src="/images/showcase.jpeg"
+                src="/images/deluxeskin.jpeg"
                 alt="Deluxe Skin Care FAQ"
-                width={1600}
-                height={900}
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                fill
+                sizes="(max-width: 768px) 100vw, 460px"
+                style={{ objectFit: 'cover', display: 'block' }}
               />
             </div>
             <div className="faq-grid">

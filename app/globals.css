@@ -1284,7 +1284,11 @@ button {
 .faq-image-wrap {
   overflow: hidden;
   border-radius: var(--radius-xl);
-  min-height: 320px;
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 3 / 4;
+  min-height: 360px;
+  margin: 0 auto;
 }
 
 @media (min-width: 992px) {
@@ -1295,7 +1299,7 @@ button {
   }
 
   .faq-image-wrap {
-    min-height: 100%;
+    margin: 0;
   }
 }
 

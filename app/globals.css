@@ -620,6 +620,65 @@ button {
   background: linear-gradient(135deg, var(--surface-container-lowest) 0%, var(--surface-container-low) 100%);
 }
 
+/* ── Skin Pain Point Section ── */
+.skin-pain-section {
+  background: var(--surface-container-lowest);
+}
+
+.skin-pain-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.skin-pain-image {
+  height: 520px;
+}
+
+.skin-pain-copy {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.skin-pain-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.skin-pain-body p {
+  margin-bottom: 0.65rem;
+  color: var(--on-surface-variant);
+  line-height: 1.75;
+}
+
+.skin-pain-body p:last-child {
+  margin-bottom: 0;
+  color: var(--on-surface);
+}
+
+@media (max-width: 900px) {
+  .skin-pain-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .skin-pain-image:first-child {
+    height: 300px;
+  }
+
+  .skin-pain-image:last-child {
+    height: 300px;
+  }
+
+  .skin-pain-copy {
+    padding: 0;
+  }
+}
+
 .before-after-card {
   max-width: 920px;
   margin: 0 auto;

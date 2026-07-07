@@ -89,6 +89,47 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Skin Pain Point */}
+      <section className="section skin-pain-section">
+        <div className="container">
+          <div className="section-header">
+            <span className="label-lg section-label fade-up d1">The goal isn&apos;t just today&apos;s glow.</span>
+            <h2 className="headline-md section-title fade-up d2">You Deserve More Than A Quick Spa Visit.</h2>
+            <p className="body-md section-text fade-up d3">
+              Your confidence shouldn&apos;t disappear because of your skin. Whether you&apos;re preparing for your wedding, vacation, or simply want to feel beautiful again. We&apos;re here to help restore both your skin and your confidence.
+            </p>
+          </div>
+        </div>
+        <div className="container skin-pain-grid">
+          <div className="skin-pain-image fade-up d1" style={{ position: 'relative' }}>
+            <Image
+              src="/images/deluxeskin.jpeg"
+              alt="Skincare treatment"
+              fill
+              sizes="(max-width: 768px) 100vw, 25vw"
+              style={{ objectFit: 'cover', borderRadius: '1rem' }}
+            />
+          </div>
+          <div className="skin-pain-copy fade-up d2">
+            <h3 className="skin-pain-title">Tired Of Looking In The Mirror And Not Loving Your Skin?</h3>
+            <div className="skin-pain-body body-md">
+              <p>You&apos;ve tried expensive skincare products. You&apos;ve followed social media routines. You&apos;ve switched cleansers. Yet the acne returns. The pigmentation stays. Your skin still doesn&apos;t glow.</p>
+              <p>That&apos;s because healthy skin starts with understanding <strong>your skin</strong>, not copying someone else&apos;s routine.</p>
+              <p>At Deluxe, every treatment begins with professional skin assessment before recommending solutions designed specifically for you.</p>
+            </div>
+          </div>
+          <div className="skin-pain-image fade-up d3" style={{ position: 'relative' }}>
+            <Image
+              src="/images/hfacial.jpg"
+              alt="Professional facial treatment"
+              fill
+              sizes="(max-width: 768px) 100vw, 25vw"
+              style={{ objectFit: 'cover', borderRadius: '1rem' }}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Post-Hero Feature Grid */}
       <section id="services" className="section medspa-features">
         <div className="container">

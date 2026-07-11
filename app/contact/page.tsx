@@ -24,6 +24,12 @@ const contactLocations = [
   },
 ];
 
+const weeklyHours = [
+  { day: 'Monday', time: 'Closed' },
+  { day: 'Tuesday - Saturday', time: '10:00 AM - 6:00 PM' },
+  { day: 'Sunday', time: '12:00 PM - 5:00 PM' },
+];
+
 export default function ContactPage() {
   return (
     <section className="section" style={{ paddingTop: 48 }}>
@@ -86,7 +92,14 @@ export default function ContactPage() {
               </div>
               <div className="contact-item-text">
                 <strong>Opening Hours</strong>
-                <span>Monday – Saturday: 9:00 AM – 7:00 PM<br />Sunday: 12:00 PM – 6:00 PM</span>
+                <ul className="contact-hours-list" aria-label="Opening hours">
+                  {weeklyHours.map((item) => (
+                    <li key={item.day}>
+                      <span>{item.day}</span>
+                      <span>{item.time}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
 

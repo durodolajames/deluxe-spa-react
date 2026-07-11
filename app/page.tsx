@@ -111,7 +111,6 @@ const clinicLocations = [
     image: '/images/6.jpeg',
     imageAlt: 'Deluxe Skincare Lekki location',
     address: 'Block 95 Plot 5A, Omorinre Johnson Street, off Bisola Durosimi Etti Street, off Admiralty Way, Lekki Phase 1, Lagos',
-    note: 'Mon - Sat | 9:00 AM - 7:00 PM',
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=Block+95+plot+5A+Omorinre+Johnson+street+off+bisola+durosimi+etti+street+off+admiralty+way+Lekki+Phase1+Lagos',
   },
   {
@@ -121,9 +120,14 @@ const clinicLocations = [
     image: '/images/Hero.jpeg',
     imageAlt: 'Deluxe Skincare second Lekki location',
     address: '55 Rasheed Alaba Williams Street, Lekki Phase I, Lekki, Lagos',
-    note: 'Mon - Sat | 9:00 AM - 7:00 PM',
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=55+Rasheed+Alaba+Williams+Street+Lekki+Phase+I+Lekki+Lagos',
   },
+];
+
+const weeklyHours = [
+  { day: 'Monday', time: 'Closed' },
+  { day: 'Tuesday - Saturday', time: '10:00 AM - 6:00 PM' },
+  { day: 'Sunday', time: '12:00 PM - 5:00 PM' },
 ];
 
 export default function HomePage() {
@@ -506,7 +510,14 @@ export default function HomePage() {
                   <p className="contact-location-city">{location.city}</p>
                   <h3 className="contact-location-title">{location.title}</h3>
                   <p className="contact-location-address">{location.address}</p>
-                  <p className="location-note">{location.note}</p>
+                  <ul className="location-hours-list" aria-label="Opening hours">
+                    {weeklyHours.map((item) => (
+                      <li key={item.day}>
+                        <span>{item.day}</span>
+                        <span>{item.time}</span>
+                      </li>
+                    ))}
+                  </ul>
                   <a href={location.mapUrl} target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-sm">Open in Maps</a>
                 </div>
               </article>

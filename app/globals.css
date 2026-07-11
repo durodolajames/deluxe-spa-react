@@ -1590,6 +1590,31 @@ button {
   margin-bottom: 22px;
 }
 
+.location-hours-list,
+.contact-hours-list {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.location-hours-list li,
+.contact-hours-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--on-surface-variant);
+  line-height: 1.45;
+}
+
+.location-hours-list li span:first-child,
+.contact-hours-list li span:first-child {
+  font-weight: 600;
+  color: var(--deep-espresso);
+}
+
 @media (min-width: 768px) {
   .impact-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -2792,6 +2817,10 @@ button {
   color: var(--on-surface-variant);
   line-height: 1.6;
   margin-bottom: 16px;
+}
+
+.contact-hours-list {
+  margin-bottom: 0;
 }
 
 @media (min-width: 1200px) {

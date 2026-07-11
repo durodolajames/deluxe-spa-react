@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { products } from '@/lib/data';
 import AddToCartButton from '@/components/AddToCartButton';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider';
-import HorizontalGallery from '@/components/HorizontalGallery';
+import ImpactStats from '@/components/ImpactStats';
 
 const beforeAfterCases = [
   {
@@ -44,25 +44,114 @@ const beforeAfterCases = [
   },
 ];
 
+const impactStats = [
+  { label: 'Years of Practice', value: '9+' },
+  { label: 'Clients Served', value: '3,000+' },
+  { label: 'Treatment Sessions', value: '15,000+' },
+  { label: 'Customer Satisfaction', value: '98%' },
+];
+
+const testimonialHighlights = [
+  {
+    id: 'testimonial-1',
+    quote: 'My acne flare-ups reduced significantly within weeks. The treatment plan was clear, practical, and tailored to my skin.',
+    author: 'Amaka E.',
+    treatment: 'Corrective Acne Program',
+  },
+  {
+    id: 'testimonial-2',
+    quote: 'From consultation to aftercare, everything felt premium and professional. My skin texture is smoother and brighter now.',
+    author: 'Temi A.',
+    treatment: 'Rejuvenation Facial Series',
+  },
+  {
+    id: 'testimonial-3',
+    quote: 'I finally found a clinic that combines expert advice with real results. The home routine recommendations changed everything.',
+    author: 'Nneka O.',
+    treatment: 'Pigmentation Recovery Plan',
+  },
+];
+
+const treatmentShowcase = [
+  {
+    id: 'treatment-hydrafacial',
+    label: 'Treatments',
+    title: 'Hydrafacial',
+    image: '/images/hfacial.jpg',
+    href: '/services',
+  },
+  {
+    id: 'treatment-laser',
+    label: 'Laser Treatments',
+    title: 'Laser Hair Removal',
+    image: '/images/Laser%20Treatment.jpeg',
+    href: '/services',
+  },
+  {
+    id: 'treatment-cosmetology',
+    label: 'Cosmetology',
+    title: 'Chemical Peels',
+    image: '/images/deluxeskin.jpeg',
+    href: '/services',
+  },
+  {
+    id: 'treatment-wellness',
+    label: 'Body & Wellness',
+    title: 'IV Therapy',
+    image: '/images/Body%20%26%20Wellness.jpeg',
+    href: '/services',
+  },
+];
+
+const clinicLocations = [
+  {
+    id: 'location-lagos',
+    city: 'Lagos',
+    title: 'Location 1',
+    image: '/images/6.jpeg',
+    imageAlt: 'Deluxe Skincare Lekki location',
+    address: 'Block 95 Plot 5A, Omorinre Johnson Street, off Bisola Durosimi Etti Street, off Admiralty Way, Lekki Phase 1, Lagos',
+    note: 'Mon - Sat | 9:00 AM - 7:00 PM',
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Block+95+plot+5A+Omorinre+Johnson+street+off+bisola+durosimi+etti+street+off+admiralty+way+Lekki+Phase1+Lagos',
+  },
+  {
+    id: 'location-lekki-2',
+    city: 'Lagos',
+    title: 'Location 2',
+    image: '/images/Hero.jpeg',
+    imageAlt: 'Deluxe Skincare second Lekki location',
+    address: '55 Rasheed Alaba Williams Street, Lekki Phase I, Lekki, Lagos',
+    note: 'Mon - Sat | 9:00 AM - 7:00 PM',
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=55+Rasheed+Alaba+Williams+Street+Lekki+Phase+I+Lekki+Lagos',
+  },
+];
+
 export default function HomePage() {
   const featuredProducts = products.slice(0, 4);
+  const showSplitSections = false;
 
   return (
     <>
       {/* Hero */}
       <section className="hero">
+        <div className="hero-slideshow" aria-hidden="true">
+          <span className="hero-slide hero-slide-1" />
+          <span className="hero-slide hero-slide-2" />
+          <span className="hero-slide hero-slide-3" />
+          <span className="hero-slide hero-slide-4" />
+        </div>
         <div className="container">
           <div className="hero-grid">
             <div className="hero-copy hero-fade-in">
               <div className="hero-stagger">
-                <span className="label-lg hero-label">Luxury Med Spa & Skincare</span>
-                <h1 className="display-lg hero-title">Reveal Your Natural Radiance</h1>
+                <span className="label-lg hero-label">Med spa &amp; skincare</span>
+                <h1 className="display-lg hero-title">Your haven for corrective care &amp; skin rejuvenation</h1>
                 <p className="body-lg hero-text">
-                  Experience clinical-grade skincare treatments and premium products designed to restore, rejuvenate, and illuminate your skin.
+                  Experience advanced medical-grade skin treatments and premium skincare products thoughtfully designed to restore skin health, rejuvenate your complexion and deliver visible, lasting results.
                 </p>
                 <div className="hero-actions">
-                  <Link href="/services" className="btn btn-primary">Explore Services</Link>
-                  <Link href="/shop" className="btn btn-secondary">Shop Products</Link>
+                  <Link href="/contact" className="btn btn-primary">Book Consultation</Link>
+                  <Link href="/shop" className="btn btn-secondary hero-cta-shop">Shop Products</Link>
                 </div>
               </div>
             </div>
@@ -89,44 +178,47 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Skin Pain Point */}
-      <section className="section skin-pain-section">
+      {/* Impact Metrics */}
+      <section className="section impact-section">
         <div className="container">
           <div className="section-header">
-            <span className="label-lg section-label fade-up d1">The goal isn&apos;t just today&apos;s glow.</span>
-            <h2 className="headline-md section-title fade-up d2">You Deserve More Than A Quick Spa Visit.</h2>
-            <p className="body-md section-text fade-up d3">
-              Your confidence shouldn&apos;t disappear because of your skin. Whether you&apos;re preparing for your wedding, vacation, or simply want to feel beautiful again. We&apos;re here to help restore both your skin and your confidence.
-            </p>
+            <span className="label-lg section-label fade-up d1">Our Impact in Numbers</span>
+            <h2 className="headline-md section-title fade-up d2">Clinical solutions for healthier skin</h2>
+            <p className="body-md section-text fade-up d3">Trusted care, measurable outcomes, and consistent results across corrective and rejuvenation treatments.</p>
+          </div>
+          <ImpactStats stats={impactStats} />
+        </div>
+      </section>
+
+      {/* Popular Treatments */}
+      <section className="section treatments-showcase-section">
+        <div className="container">
+          <div className="section-header">
+            <span className="label-lg section-label fade-up d1">Popular Treatments</span>
+            <h2 className="headline-md section-title fade-up d2">Explore services tailored to your skin goals</h2>
           </div>
         </div>
-        <div className="container skin-pain-grid">
-          <div className="skin-pain-image fade-up d1" style={{ position: 'relative' }}>
-            <Image
-              src="/images/deluxeskin.jpeg"
-              alt="Skincare treatment"
-              fill
-              sizes="(max-width: 768px) 100vw, 25vw"
-              style={{ objectFit: 'cover', borderRadius: '1rem' }}
-            />
+        <div className="treatments-marquee fade-up d2" aria-label="Auto-scrolling treatment cards">
+          <div className="treatments-track">
+            {[...treatmentShowcase, ...treatmentShowcase].map((item, idx) => (
+              <article
+                className="treatment-card"
+                key={`${item.id}-${idx}`}
+                style={{
+                  backgroundImage: `linear-gradient(180deg, rgba(18, 16, 14, 0.2) 0%, rgba(18, 16, 14, 0.62) 100%), url('${item.image}')`,
+                }}
+              >
+                <div className="treatment-card-overlay">
+                  <span className="treatment-eyebrow">{item.label}</span>
+                  <h3 className="treatment-name">{item.title}</h3>
+                  <Link href={item.href} className="btn btn-secondary treatment-cta">View Details</Link>
+                </div>
+              </article>
+            ))}
           </div>
-          <div className="skin-pain-copy fade-up d2">
-            <h3 className="skin-pain-title">Tired Of Looking In The Mirror And Not Loving Your Skin?</h3>
-            <div className="skin-pain-body body-md">
-              <p>You&apos;ve tried expensive skincare products. You&apos;ve followed social media routines. You&apos;ve switched cleansers. Yet the acne returns. The pigmentation stays. Your skin still doesn&apos;t glow.</p>
-              <p>That&apos;s because healthy skin starts with understanding <strong>your skin</strong>, not copying someone else&apos;s routine.</p>
-              <p>At Deluxe, every treatment begins with professional skin assessment before recommending solutions designed specifically for you.</p>
-            </div>
-          </div>
-          <div className="skin-pain-image fade-up d3" style={{ position: 'relative' }}>
-            <Image
-              src="/images/hfacial.jpg"
-              alt="Professional facial treatment"
-              fill
-              sizes="(max-width: 768px) 100vw, 25vw"
-              style={{ objectFit: 'cover', borderRadius: '1rem' }}
-            />
-          </div>
+        </div>
+        <div className="container text-center mt-4">
+          <Link href="/contact" className="btn btn-primary">Book Consultation</Link>
         </div>
       </section>
 
@@ -158,47 +250,51 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Split Showcase - Services */}
-      <section className="section split-section">
-        <div className="container split-grid">
-          <div className="split-copy fade-up">
-            <span className="label-lg section-label">Services</span>
-            <h2 className="headline-md section-title">Doctor-led treatments for every skin need</h2>
-            <p className="body-md section-text">Our clinical services blend medical expertise with luxury skincare to deliver results that feel as good as they look.</p>
-            <Link href="/services" className="btn btn-primary">Explore Services</Link>
-          </div>
-          <div className="split-image split-image-services fade-up" style={{ position: 'relative' }}>
-            <Image
-              src="/images/Service.jpeg"
-              alt="Medical spa services"
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              style={{ objectFit: 'cover' }}
-            />
-          </div>
-        </div>
-      </section>
+      {showSplitSections && (
+        <>
+          {/* Split Showcase - Services */}
+          <section className="section split-section">
+            <div className="container split-grid">
+              <div className="split-copy fade-up">
+                <span className="label-lg section-label">Services</span>
+                <h2 className="headline-md section-title">Doctor-led treatments for every skin need</h2>
+                <p className="body-md section-text">Our clinical services blend medical expertise with luxury skincare to deliver results that feel as good as they look.</p>
+                <Link href="/services" className="btn btn-primary">Explore Services</Link>
+              </div>
+              <div className="split-image split-image-services fade-up" style={{ position: 'relative' }}>
+                <Image
+                  src="/images/Service.jpeg"
+                  alt="Medical spa services"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
+            </div>
+          </section>
 
-      {/* Split Showcase - Products */}
-      <section className="section split-section">
-        <div className="container split-grid">
-          <div className="split-image split-image-products fade-up" style={{ position: 'relative' }}>
-            <Image
-              src="/images/Product.jpeg"
-              alt="Premium skincare products"
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              style={{ objectFit: 'cover' }}
-            />
-          </div>
-          <div className="split-copy fade-up">
-            <span className="label-lg section-label">Products</span>
-            <h2 className="headline-md section-title">Premium skincare curated for home use</h2>
-            <p className="body-md section-text">Shop product routines designed to extend treatment benefits, soothe sensitive skin, and support lasting radiance.</p>
-            <Link href="/shop" className="btn btn-primary">Shop Products</Link>
-          </div>
-        </div>
-      </section>
+          {/* Split Showcase - Products */}
+          <section className="section split-section">
+            <div className="container split-grid">
+              <div className="split-image split-image-products fade-up" style={{ position: 'relative' }}>
+                <Image
+                  src="/images/Product.jpeg"
+                  alt="Premium skincare products"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
+              <div className="split-copy fade-up">
+                <span className="label-lg section-label">Products</span>
+                <h2 className="headline-md section-title">Premium skincare curated for home use</h2>
+                <p className="body-md section-text">Shop product routines designed to extend treatment benefits, soothe sensitive skin, and support lasting radiance.</p>
+                <Link href="/shop" className="btn btn-primary">Shop Products</Link>
+              </div>
+            </div>
+          </section>
+        </>
+      )}
 
       {/* Featured Services */}
       <section className="section">
@@ -261,6 +357,20 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Team Highlight */}
+      <section className="section team-highlight-section">
+        <div className="team-highlight-bg" aria-hidden="true" />
+        <div className="container">
+          <div className="team-highlight-content fade-up d2">
+            <h2 className="headline-lg team-highlight-title">The Experts Behind Every Result</h2>
+            <p className="body-lg team-highlight-text">
+              Your care is led by a multidisciplinary medical team committed to evidence-based treatments, precision diagnostics, and long-term skin outcomes.
+            </p>
+            <Link href="/about" className="btn btn-secondary team-highlight-cta">About Us</Link>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Products */}
       <section className="section bg-champagne">
         <div className="container">
@@ -305,44 +415,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section">
-        <div className="container">
-          <div className="section-header">
-            <span className="label-lg section-label fade-up d1">Why Deluxe</span>
-            <h2 className="headline-md section-title fade-up d2">The Deluxe Difference</h2>
-          </div>
-          <div className="grid-3">
-            <div className="feature-item fade-up d1">
-              <div className="feature-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-              </div>
-              <h3 className="feature-title">Clinical Expertise</h3>
-              <p className="feature-text">All treatments are administered by certified skincare professionals using medical-grade equipment and protocols.</p>
-            </div>
-            <div className="feature-item fade-up d2">
-              <div className="feature-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-              </div>
-              <h3 className="feature-title">Premium Products</h3>
-              <p className="feature-text">Our skincare line is formulated with clinically proven ingredients for visible, lasting results you can see and feel.</p>
-            </div>
-            <div className="feature-item fade-up d3">
-              <div className="feature-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-              </div>
-              <h3 className="feature-title">Personalized Care</h3>
-              <p className="feature-text">Every treatment begins with a comprehensive skin consultation to ensure your regimen is tailored to your unique needs.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Gallery */}
-      <section className="section gallery-section">
-        <HorizontalGallery />
-      </section>
-
       {/* FAQ */}
       <section className="section">
         <div className="container">
@@ -383,6 +455,62 @@ export default function HomePage() {
                 <p>In many cases, yes. Your specialist will recommend safe treatment combinations based on your skin condition and recovery needs.</p>
               </details>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="section testimonials-section bg-champagne">
+        <div className="container">
+          <div className="section-header">
+            <span className="label-lg section-label fade-up d1">Client Testimonials</span>
+            <h2 className="headline-md section-title fade-up d2">Real stories from visible transformations</h2>
+            <p className="body-md section-text fade-up d3">Hear from clients who trusted our team for corrective care, treatment guidance, and long-term skin confidence.</p>
+          </div>
+          <div className="testimonials-grid">
+            {testimonialHighlights.map((item, idx) => (
+              <article className={`testimonial-card fade-up d${(idx % 5) + 1}`} key={item.id}>
+                <p className="testimonial-quote">&ldquo;{item.quote}&rdquo;</p>
+                <p className="testimonial-author">{item.author}</p>
+                <p className="testimonial-treatment">{item.treatment}</p>
+              </article>
+            ))}
+          </div>
+          <div className="text-center mt-4">
+            <Link href="/contact" className="btn btn-primary">See Success Stories</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Locations */}
+      <section className="section locations-section">
+        <div className="container">
+          <div className="section-header">
+            <span className="label-lg section-label fade-up d1">Our Locations</span>
+            <h2 className="headline-md section-title fade-up d2">Visit us at any of our two clinics</h2>
+            <p className="body-md section-text fade-up d3">Choose the branch closest to you and book your consultation with our team.</p>
+          </div>
+          <div className="contact-locations-grid">
+            {clinicLocations.map((location, idx) => (
+              <article className={`contact-location-card fade-up d${(idx % 5) + 1}`} key={location.id}>
+                <div className="contact-location-image">
+                  <Image
+                    src={location.image}
+                    alt={location.imageAlt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
+                <div className="contact-location-body">
+                  <p className="contact-location-city">{location.city}</p>
+                  <h3 className="contact-location-title">{location.title}</h3>
+                  <p className="contact-location-address">{location.address}</p>
+                  <p className="location-note">{location.note}</p>
+                  <a href={location.mapUrl} target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-sm">Open in Maps</a>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>

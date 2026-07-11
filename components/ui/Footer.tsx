@@ -7,7 +7,9 @@ export default function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <Image src="/images/mainlogo.png" alt="Deluxe Skin Care" width={120} height={40} />
+            <div className="footer-logo-wrap">
+              <Image src="/images/deluxelogo.svg" alt="Deluxe Skin Care" width={120} height={40} className="site-logo-image" />
+            </div>
             <p>Premium med spa and skincare boutique in Lagos. Clinical expertise meets luxury self-care.</p>
           </div>
           <div>

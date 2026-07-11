@@ -221,11 +221,21 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
+  width: 120px;
+  height: 40px;
+  overflow: hidden;
 }
 
 .logo img {
-  height: 40px;
-  width: auto;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.site-logo-image {
+  transform: scale(1.12);
+  transform-origin: center;
+  object-position: center;
 }
 
 .nav-desktop {
@@ -921,11 +931,43 @@ button {
   display: flex;
   align-items: center;
   background-color: #120f0c;
-  background-image: url('/images/hfacial.jpg');
+  overflow: hidden;
+}
+
+.hero-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  overflow: hidden;
+  opacity: 0;
+  animation: heroCrossfade 24s infinite;
+}
+
+.hero-slide-1 {
+  background-image: url('/images/hfacial.jpg');
+  animation-delay: 0s;
+}
+
+.hero-slide-2 {
+  background-image: url('/images/deluxeskin.jpeg');
+  animation-delay: 6s;
+}
+
+.hero-slide-3 {
+  background-image: url('/images/Service.jpeg');
+  animation-delay: 12s;
+}
+
+.hero-slide-4 {
+  background-image: url('/images/Facial%20Treatments.jpeg');
+  animation-delay: 18s;
 }
 
 .hero::before {
@@ -970,18 +1012,23 @@ button {
 .hero-title {
   margin-bottom: 24px;
   color: var(--clinical-white);
+  max-width: 980px;
+  margin-inline: auto;
 }
 
 .hero-text {
   color: rgba(255, 255, 255, 0.88);
   margin-bottom: 40px;
-  max-width: 480px;
+  max-width: 760px;
+  margin-inline: auto;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .hero-grid {
@@ -992,7 +1039,13 @@ button {
 }
 
 .hero-copy {
-  max-width: 620px;
+  max-width: 940px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-cta-shop {
+  display: none;
 }
 
 .hero-aside {
@@ -1044,6 +1097,14 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.24);
   color: var(--deep-espresso);
   box-shadow: 0 16px 40px rgba(18, 16, 14, 0.25);
+}
+
+@keyframes heroCrossfade {
+  0% { opacity: 0; }
+  4% { opacity: 1; }
+  25% { opacity: 1; }
+  29% { opacity: 0; }
+  100% { opacity: 0; }
 }
 
 .medspa-features .section-note {
@@ -1262,11 +1323,17 @@ button {
 
 @media (min-width: 1200px) {
   .hero-grid {
-    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-columns: 1fr;
   }
 
   .hero-aside-card {
     min-height: 320px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-cta-shop {
+    display: inline-flex;
   }
 }
 
@@ -1326,6 +1393,232 @@ button {
   margin-top: 18px;
   color: var(--on-surface-variant);
   line-height: 1.8;
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.impact-card {
+  background: var(--surface-container-lowest);
+  border: 1px solid rgba(18, 16, 14, 0.08);
+  border-radius: var(--radius-xl);
+  padding: 28px 20px;
+  text-align: center;
+  box-shadow: 0 14px 34px rgba(18, 16, 14, 0.04);
+}
+
+.impact-value {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 5vw, 56px);
+  line-height: 1;
+  color: var(--deep-espresso);
+  margin-bottom: 10px;
+}
+
+.impact-label {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+}
+
+.treatments-showcase-section {
+  padding-top: 28px;
+}
+
+.treatments-marquee {
+  overflow: hidden;
+}
+
+.treatments-track {
+  display: flex;
+  gap: 18px;
+  width: max-content;
+  padding: 0 20px;
+  animation: treatmentsMarquee 36s linear infinite;
+}
+
+.treatments-marquee:hover .treatments-track {
+  animation-play-state: paused;
+}
+
+.treatment-card {
+  width: min(84vw, 360px);
+  min-height: 480px;
+  border-radius: var(--radius-xl);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0 22px 44px rgba(18, 16, 14, 0.16);
+}
+
+.treatment-card-overlay {
+  width: 100%;
+  padding: 30px 22px 22px;
+}
+
+.treatment-eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.treatment-name {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3.3vw, 46px);
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--clinical-white);
+  margin-bottom: 20px;
+}
+
+.treatment-cta {
+  border-color: rgba(255, 255, 255, 0.7);
+  color: var(--clinical-white);
+  background: rgba(255, 255, 255, 0.06);
+  min-width: 180px;
+}
+
+.treatment-cta:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.95);
+}
+
+@keyframes treatmentsMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 9px));
+  }
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.testimonial-card {
+  background: var(--surface-container-lowest);
+  border: 1px solid rgba(18, 16, 14, 0.08);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  box-shadow: 0 18px 36px rgba(18, 16, 14, 0.06);
+}
+
+.testimonial-quote {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.4vw, 28px);
+  line-height: 1.45;
+  color: var(--deep-espresso);
+  margin-bottom: 18px;
+}
+
+.testimonial-author {
+  font-weight: 600;
+  color: var(--deep-espresso);
+  margin-bottom: 6px;
+}
+
+.testimonial-treatment {
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+}
+
+.locations-section {
+  background: var(--surface-container-low);
+}
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.location-card {
+  background: var(--surface-container-lowest);
+  border: 1px solid rgba(18, 16, 14, 0.08);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  box-shadow: 0 18px 36px rgba(18, 16, 14, 0.06);
+}
+
+.location-city {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.location-title {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.2;
+  color: var(--deep-espresso);
+  margin-bottom: 12px;
+}
+
+.location-address {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--on-surface);
+  margin-bottom: 8px;
+}
+
+.location-note {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+  margin-bottom: 22px;
+}
+
+@media (min-width: 768px) {
+  .impact-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .treatments-track {
+    gap: 20px;
+    padding: 0 32px;
+  }
+
+  .treatment-card {
+    width: 380px;
+    min-height: 540px;
+  }
+
+  .treatment-card-overlay {
+    padding: 34px 28px 28px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .locations-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
 }
 
 /* Grids */
@@ -1456,6 +1749,57 @@ button {
 
 .gallery-section {
   padding-top: 40px;
+}
+
+.team-highlight-section {
+  position: relative;
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin: 24px 0;
+}
+
+.team-highlight-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(180deg, rgba(18, 16, 14, 0.5) 0%, rgba(18, 16, 14, 0.66) 100%),
+    url('/images/deluxepro.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.team-highlight-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.team-highlight-title {
+  color: var(--clinical-white);
+  margin-bottom: 18px;
+}
+
+.team-highlight-text {
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 660px;
+  margin: 0 auto 28px;
+}
+
+.team-highlight-cta {
+  border-color: rgba(255, 255, 255, 0.75);
+  color: var(--clinical-white);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.team-highlight-cta:hover {
+  border-color: rgba(255, 255, 255, 0.96);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .gallery-section-inner {
@@ -2259,6 +2603,25 @@ button {
   }
 }
 
+
+@media (max-width: 767px) {
+  .team-highlight-section {
+    min-height: 62vh;
+    margin: 12px 0;
+  }
+
+  .team-highlight-title {
+    font-size: clamp(32px, 9vw, 42px);
+    line-height: 1.14;
+  }
+
+  .team-highlight-text {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 92%;
+    margin-bottom: 22px;
+  }
+}
 .about-image {
   aspect-ratio: 4 / 5;
   background: linear-gradient(135deg, var(--champagne) 0%, var(--surface-container) 100%);
@@ -2383,6 +2746,60 @@ button {
   border: 1px solid var(--outline-variant);
 }
 
+.contact-locations-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.contact-location-card {
+  background: var(--surface-container-lowest);
+  border: 1px solid rgba(18, 16, 14, 0.08);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 18px 36px rgba(18, 16, 14, 0.06);
+}
+
+.contact-location-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.contact-location-body {
+  padding: 18px;
+}
+
+.contact-location-city {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.contact-location-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.3vw, 28px);
+  color: var(--deep-espresso);
+  margin-bottom: 10px;
+}
+
+.contact-location-address {
+  font-size: 14px;
+  color: var(--on-surface-variant);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 1200px) {
+  .contact-locations-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 .form-group {
   margin-bottom: 20px;
 }
@@ -2498,10 +2915,17 @@ button {
   }
 }
 
-.footer-brand img {
+.footer-logo-wrap {
+  width: 144px;
   height: 48px;
-  width: auto;
+  overflow: hidden;
   margin-bottom: 20px;
+}
+
+.footer-brand img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
   filter: brightness(0) invert(1);
 }
 
@@ -2569,6 +2993,21 @@ button {
   }
   .hero {
     min-height: 60vh;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  .hero-title {
+    font-size: clamp(30px, 8vw, 40px);
+    line-height: 1.16;
+  }
+  .hero-text {
+    font-size: 15px;
+    line-height: 1.65;
+    max-width: 92%;
+  }
+  .hero-actions .btn {
+    padding: 12px 22px;
+    font-size: 12px;
   }
   .grid-4 {
     grid-template-columns: 1fr 1fr;

@@ -30,7 +30,7 @@ export default function Header() {
       <header className="site-header">
         <div className="container header-inner">
           <Link href="/" className="logo">
-            <Image src="/images/mainlogo.png" alt="Deluxe Skin Care" width={120} height={40} />
+            <Image src="/images/deluxelogo.svg" alt="Deluxe Skin Care" width={120} height={40} className="site-logo-image" />
           </Link>
 
           <nav className="nav-desktop">
@@ -69,7 +69,7 @@ export default function Header() {
       <div className={`mobile-menu ${mobileOpen ? 'open' : ''}`}>
         <div className="mobile-menu-header">
           <Link href="/" className="logo" onClick={() => setMobileOpen(false)}>
-            <Image src="/images/mainlogo.png" alt="Deluxe Skin Care" width={120} height={40} />
+            <Image src="/images/deluxelogo.svg" alt="Deluxe Skin Care" width={120} height={40} className="site-logo-image" />
           </Link>
           <button className="mobile-menu-close" onClick={() => setMobileOpen(false)} aria-label="Close menu">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

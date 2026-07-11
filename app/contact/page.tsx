@@ -3,6 +3,27 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+const contactLocations = [
+  {
+    id: 'lagos',
+    city: 'Lagos',
+    title: 'Location 1',
+    image: '/images/6.jpeg',
+    imageAlt: 'Deluxe Skincare Lekki location',
+    address: 'Block 95 Plot 5A, Omorinre Johnson Street, off Bisola Durosimi Etti Street, off Admiralty Way, Lekki Phase 1, Lagos',
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Block+95+plot+5A+Omorinre+Johnson+street+off+bisola+durosimi+etti+street+off+admiralty+way+Lekki+Phase1+Lagos',
+  },
+  {
+    id: 'lagos-2',
+    city: 'Lagos',
+    title: 'Location 2',
+    image: '/images/Hero.jpeg',
+    imageAlt: 'Deluxe Skincare second Lekki location',
+    address: '55 Rasheed Alaba Williams Street, Lekki Phase I, Lekki, Lagos',
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=55+Rasheed+Alaba+Williams+Street+Lekki+Phase+I+Lekki+Lagos',
+  },
+];
+
 export default function ContactPage() {
   return (
     <section className="section" style={{ paddingTop: 48 }}>
@@ -53,8 +74,9 @@ export default function ContactPage() {
               </div>
               <div className="contact-item-text">
                 <strong>Address</strong>
-                <a href="https://www.google.com/maps/search/?api=1&query=Block+95+plot+5A+Omorinre+Johnson+street+off+bisola+durosimi+etti+street+off+admiralty+way+Lekki+Phase1+Lagos" target="_blank" rel="noopener noreferrer"><strong>Location 1:</strong> Block 95 plot 5A Omorinre Johnson street off bisola durosimi etti street off admiralty way Lekki Phase1, Lagos</a>
-                <a href="https://www.google.com/maps/search/?api=1&query=55+Rasheed+Alaba+Williams+Street+Lekki+Phase+I+Lekki+Lagos" target="_blank" rel="noopener noreferrer"><strong>Location 2:</strong> 55 Rasheed Alaba Williams Street, Lekki Phase I, Lekki, Lagos</a>
+                {contactLocations.map((location) => (
+                  <a key={location.id} href={location.mapUrl} target="_blank" rel="noopener noreferrer"><strong>{location.title}:</strong> {location.address}</a>
+                ))}
               </div>
             </div>
 
@@ -76,16 +98,28 @@ export default function ContactPage() {
           </div>
 
           <div className="contact-form fade-up d2">
-            <h3 className="fade-up d1" style={{ fontFamily: 'var(--font-display)', fontSize: 24, fontWeight: 600, marginBottom: 24, color: 'var(--deep-espresso)' }}>Visit Deluxe Skincare</h3>
-            <div className="fade-up d2" style={{ overflow: 'hidden', borderRadius: 'var(--radius-lg)' }}>
-              <Image
-                src="/images/deluxe.jpeg"
-                alt="Deluxe Skincare"
-                width={900}
-                height={1100}
-                style={{ width: '100%', height: 'auto', display: 'block' }}
-                priority
-              />
+            <h3 className="fade-up d1" style={{ fontFamily: 'var(--font-display)', fontSize: 24, fontWeight: 600, marginBottom: 24, color: 'var(--deep-espresso)' }}>Visit Our Locations</h3>
+            <div className="contact-locations-grid">
+              {contactLocations.map((location, idx) => (
+                <article className={`contact-location-card fade-up d${(idx % 5) + 1}`} key={location.id}>
+                  <div className="contact-location-image">
+                    <Image
+                      src={location.image}
+                      alt={location.imageAlt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      style={{ objectFit: 'cover' }}
+                      priority={idx === 0}
+                    />
+                  </div>
+                  <div className="contact-location-body">
+                    <p className="contact-location-city">{location.city}</p>
+                    <h4 className="contact-location-title">{location.title}</h4>
+                    <p className="contact-location-address">{location.address}</p>
+                    <a href={location.mapUrl} target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-sm">Open in Maps</a>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </div>

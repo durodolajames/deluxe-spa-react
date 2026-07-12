@@ -48,7 +48,7 @@ export default function ServicesPage() {
         <div className="services-location-panel fade-up d1">
           <div className="services-location-copy">
             <p className="services-location-label">Choose Location for Booking</p>
-            <p className="services-location-note">All "Book via Fresha" buttons below will use your selected branch.</p>
+            <p className="services-location-note">All &quot;Book via Fresha&quot; buttons below will use your selected branch.</p>
           </div>
           <div className="services-location-controls">
             <select

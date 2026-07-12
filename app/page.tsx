@@ -4,12 +4,13 @@ import { products } from '@/lib/data';
 import AddToCartButton from '@/components/AddToCartButton';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 import ImpactStats from '@/components/ImpactStats';
+import TreatmentCarousel from '@/components/TreatmentCarousel';
 
 const beforeAfterCases = [
   {
     id: 'client-acne-1',
-    title: 'Facial Case 01',
-    concern: 'Deep cleanse and brightening progress',
+    title: 'Acne Treatment Case 01',
+    concern: 'Chemical peel progress',
     beforeImage: '/images/Facial_before.jpeg',
     afterImage: '/images/Facial_after.jpeg',
     beforeLabel: 'Pre-Treatment',
@@ -26,8 +27,8 @@ const beforeAfterCases = [
   },
   {
     id: 'client-texture-3',
-    title: 'Waxing Case 01',
-    concern: 'Smoother finish and reduced irritation',
+    title: 'Laser Hair Removal Case 01',
+    concern: 'Smoother finish and reduced visible growth',
     beforeImage: '/images/Wax_before.jpeg',
     afterImage: '/images/Wax_after1.jpeg',
     beforeLabel: 'Before Wax',
@@ -98,7 +99,21 @@ const treatmentShowcase = [
     id: 'treatment-wellness',
     label: 'Body & Wellness',
     title: 'IV Therapy',
-    image: '/images/Body%20%26%20Wellness.jpeg',
+    image: '/images/iv_image.webp',
+    href: '/services',
+  },
+  {
+    id: 'treatment-microneedling',
+    label: 'Advanced Facial',
+    title: 'Microneedling',
+    image: '/images/Facial_gsap.jpeg',
+    href: '/services',
+  },
+  {
+    id: 'treatment-signature',
+    label: 'Signature Care',
+    title: 'Deluxe Signature Facial',
+    image: '/images/deluxefacial2.jpg',
     href: '/services',
   },
 ];
@@ -111,6 +126,7 @@ const clinicLocations = [
     image: '/images/6.jpeg',
     imageAlt: 'Deluxe Skincare Lekki location',
     address: 'Block 95 Plot 5A, Omorinre Johnson Street, off Bisola Durosimi Etti Street, off Admiralty Way, Lekki Phase 1, Lagos',
+    bookingUrl: 'https://www.fresha.com/a/deluxe-skincare-and-spa-lagos-block-95-plot-5a-omorinre-johnson-street-off-bisola-durosimi-etti-street-off-admiralty-way-lekki-phase1-fx7mrwp0',
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=Block+95+plot+5A+Omorinre+Johnson+street+off+bisola+durosimi+etti+street+off+admiralty+way+Lekki+Phase1+Lagos',
   },
   {
@@ -120,6 +136,7 @@ const clinicLocations = [
     image: '/images/Hero.jpeg',
     imageAlt: 'Deluxe Skincare second Lekki location',
     address: '55 Rasheed Alaba Williams Street, Lekki Phase I, Lekki, Lagos',
+    bookingUrl: 'https://www.fresha.com/a/deluxe-skincare-and-spa-lekki-55-rasheed-alaba-williams-street-xqwbfu2b',
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=55+Rasheed+Alaba+Williams+Street+Lekki+Phase+I+Lekki+Lagos',
   },
 ];
@@ -142,7 +159,6 @@ export default function HomePage() {
           <span className="hero-slide hero-slide-1" />
           <span className="hero-slide hero-slide-2" />
           <span className="hero-slide hero-slide-3" />
-          <span className="hero-slide hero-slide-4" />
         </div>
         <div className="container">
           <div className="hero-grid">
@@ -178,7 +194,7 @@ export default function HomePage() {
               Slide to compare treatment progress and see how consistent care delivers visible skin improvement.
             </p>
           </div>
-          <BeforeAfterSlider cases={beforeAfterCases} enableSessionShuffle />
+          <BeforeAfterSlider cases={beforeAfterCases} enableSessionShuffle={false} />
         </div>
       </section>
 
@@ -202,25 +218,7 @@ export default function HomePage() {
             <h2 className="headline-md section-title fade-up d2">Explore services tailored to your skin goals</h2>
           </div>
         </div>
-        <div className="treatments-marquee fade-up d2" aria-label="Auto-scrolling treatment cards">
-          <div className="treatments-track">
-            {[...treatmentShowcase, ...treatmentShowcase].map((item, idx) => (
-              <article
-                className="treatment-card"
-                key={`${item.id}-${idx}`}
-                style={{
-                  backgroundImage: `linear-gradient(180deg, rgba(18, 16, 14, 0.2) 0%, rgba(18, 16, 14, 0.62) 100%), url('${item.image}')`,
-                }}
-              >
-                <div className="treatment-card-overlay">
-                  <span className="treatment-eyebrow">{item.label}</span>
-                  <h3 className="treatment-name">{item.title}</h3>
-                  <Link href={item.href} className="btn btn-secondary treatment-cta">View Details</Link>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
+        <TreatmentCarousel items={treatmentShowcase} />
         <div className="container text-center mt-4">
           <Link href="/contact" className="btn btn-primary">Book Consultation</Link>
         </div>
@@ -430,7 +428,7 @@ export default function HomePage() {
           <div className="faq-layout">
             <div className="faq-image-wrap fade-up d3">
               <Image
-                src="/images/deluxeskin.jpeg"
+                src="/images/recep.jpeg"
                 alt="Deluxe Skin Care FAQ"
                 fill
                 sizes="(max-width: 768px) 100vw, 460px"
@@ -469,7 +467,7 @@ export default function HomePage() {
           <div className="section-header">
             <span className="label-lg section-label fade-up d1">Client Testimonials</span>
             <h2 className="headline-md section-title fade-up d2">Real stories from visible transformations</h2>
-            <p className="body-md section-text fade-up d3">Hear from clients who trusted our team for corrective care, treatment guidance, and long-term skin confidence.</p>
+            <p className="body-md section-text fade-up d3">Manually curated client testimonials from in-clinic experiences. You can also read public feedback on Google.</p>
           </div>
           <div className="testimonials-grid">
             {testimonialHighlights.map((item, idx) => (
@@ -481,7 +479,14 @@ export default function HomePage() {
             ))}
           </div>
           <div className="text-center mt-4">
-            <Link href="/contact" className="btn btn-primary">See Success Stories</Link>
+            <a
+              href="https://maps.app.goo.gl/ZthyLaM6YccHBkLw6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+            >
+              Read Reviews on Google
+            </a>
           </div>
         </div>
       </section>
@@ -518,7 +523,10 @@ export default function HomePage() {
                       </li>
                     ))}
                   </ul>
-                  <a href={location.mapUrl} target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-sm">Open in Maps</a>
+                  <div className="location-actions">
+                    <a href={location.bookingUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">Book This Location</a>
+                    <a href={location.mapUrl} target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-sm">Open in Maps</a>
+                  </div>
                 </div>
               </article>
             ))}

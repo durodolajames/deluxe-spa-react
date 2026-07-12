@@ -4,9 +4,23 @@ import { useState, useMemo } from 'react';
 import { serviceCategories } from '@/lib/data';
 import { formatPrice } from '@/lib/utils';
 
+const serviceLocations = [
+  {
+    id: 'location-1',
+    name: 'Johnsons - Lekki Phase 1',
+    bookingUrl: 'https://www.fresha.com/a/deluxe-skincare-and-spa-lagos-block-95-plot-5a-omorinre-johnson-street-off-bisola-durosimi-etti-street-off-admiralty-way-lekki-phase1-fx7mrwp0',
+  },
+  {
+    id: 'location-2',
+    name: 'Williams - Lekki Phase I',
+    bookingUrl: 'https://www.fresha.com/a/deluxe-skincare-and-spa-lekki-55-rasheed-alaba-williams-street-xqwbfu2b',
+  },
+];
+
 export default function ServicesPage() {
   const [search, setSearch] = useState('');
   const [activeTab, setActiveTab] = useState('All');
+  const [activeLocationId, setActiveLocationId] = useState(serviceLocations[0].id);
 
   const allCategories = useMemo(() => ['All', ...serviceCategories.map(c => c.title)], []);
 
@@ -20,6 +34,7 @@ export default function ServicesPage() {
   }, [search, activeTab]);
 
   const totalServices = filteredCategories.reduce((sum, c) => sum + c.services.length, 0);
+  const activeLocation = serviceLocations.find((location) => location.id === activeLocationId) || serviceLocations[0];
 
   return (
     <section className="section" style={{ paddingTop: 48 }}>
@@ -28,6 +43,28 @@ export default function ServicesPage() {
           <span className="label-lg section-label">Service Menu</span>
           <h1 className="headline-lg section-title">Our Treatments</h1>
           <p className="body-md section-text">Comprehensive med spa services designed for results. Book your session today.</p>
+        </div>
+
+        <div className="services-location-panel fade-up d1">
+          <div className="services-location-copy">
+            <p className="services-location-label">Choose Location for Booking</p>
+            <p className="services-location-note">All "Book via Fresha" buttons below will use your selected branch.</p>
+          </div>
+          <div className="services-location-controls">
+            <select
+              className="services-location-select"
+              value={activeLocationId}
+              onChange={(e) => setActiveLocationId(e.target.value)}
+              aria-label="Select booking location"
+            >
+              {serviceLocations.map((location) => (
+                <option key={location.id} value={location.id}>{location.name}</option>
+              ))}
+            </select>
+            <a className="btn btn-primary btn-sm" href={activeLocation.bookingUrl} target="_blank" rel="noreferrer">
+              Book Selected Location
+            </a>
+          </div>
         </div>
 
         <div className="services-search fade-up">
@@ -85,7 +122,7 @@ export default function ServicesPage() {
                         <div className="service-item-add">
                           <a
                             className="btn btn-sm btn-secondary"
-                            href="https://www.fresha.com"
+                            href={activeLocation.bookingUrl}
                             target="_blank"
                             rel="noreferrer"
                           >

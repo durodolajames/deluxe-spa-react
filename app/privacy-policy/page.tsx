@@ -52,7 +52,7 @@ export default function PrivacyPolicyPage() {
             <h2 className="headline-sm" style={{ marginBottom: 8 }}>6. Contact</h2>
             <p className="body-md" style={{ marginBottom: 8 }}>
               If you have privacy-related questions, contact us at{' '}
-              <a href="mailto:info@deluxeskincare.com.ng">info@deluxeskincare.com.ng</a>{' '}
+              <a href="mailto:deluxe.skincareng@gmail.com">deluxe.skincareng@gmail.com</a>{' '}
               or <a href="tel:09076860852">09076860852</a>.
             </p>
             <p className="body-md" style={{ marginBottom: 4 }}>

@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <div className="footer-logo-wrap">
-              <Image src="/images/deluxelogo.svg" alt="Deluxe Skin Care" width={120} height={40} className="site-logo-image" />
+              <Image src="/images/vec2.svg" alt="Deluxe Skin Care" width={180} height={60} />
             </div>
             <p>Premium med spa and skincare boutique in Lagos. Clinical expertise meets luxury self-care.</p>
           </div>
@@ -35,9 +35,9 @@ export default function Footer() {
           <div>
             <h4 className="footer-title">Contact</h4>
             <ul className="footer-links">
-              <li><a href="tel:+2348000000000">+234 800 000 0000</a></li>
-              <li><a href="mailto:hello@deluxeskincare.ng">hello@deluxeskincare.ng</a></li>
-              <li><span>Lagos, Nigeria</span></li>
+              <li><a href="tel:09076860852">09076860852</a></li>
+              <li><a href="https://wa.me/2349076860852" target="_blank" rel="noopener noreferrer">WhatsApp: 09076860852</a></li>
+              <li><a href="mailto:deluxe.skincareng@gmail.com">deluxe.skincareng@gmail.com</a></li>
             </ul>
           </div>
         </div>

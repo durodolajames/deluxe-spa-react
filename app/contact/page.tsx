@@ -11,6 +11,7 @@ const contactLocations = [
     image: '/images/6.jpeg',
     imageAlt: 'Deluxe Skincare Lekki location',
     address: 'Block 95 Plot 5A, Omorinre Johnson Street, off Bisola Durosimi Etti Street, off Admiralty Way, Lekki Phase 1, Lagos',
+    bookingUrl: 'https://www.fresha.com/a/deluxe-skincare-and-spa-lagos-block-95-plot-5a-omorinre-johnson-street-off-bisola-durosimi-etti-street-off-admiralty-way-lekki-phase1-fx7mrwp0',
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=Block+95+plot+5A+Omorinre+Johnson+street+off+bisola+durosimi+etti+street+off+admiralty+way+Lekki+Phase1+Lagos',
   },
   {
@@ -20,6 +21,7 @@ const contactLocations = [
     image: '/images/Hero.jpeg',
     imageAlt: 'Deluxe Skincare second Lekki location',
     address: '55 Rasheed Alaba Williams Street, Lekki Phase I, Lekki, Lagos',
+    bookingUrl: 'https://www.fresha.com/a/deluxe-skincare-and-spa-lekki-55-rasheed-alaba-williams-street-xqwbfu2b',
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=55+Rasheed+Alaba+Williams+Street+Lekki+Phase+I+Lekki+Lagos',
   },
 ];
@@ -70,7 +72,7 @@ export default function ContactPage() {
               </div>
               <div className="contact-item-text">
                 <strong>Email</strong>
-                <a href="mailto:info@deluxeskincare.com.ng">info@deluxeskincare.com.ng</a>
+                <a href="mailto:deluxe.skincareng@gmail.com">deluxe.skincareng@gmail.com</a>
               </div>
             </div>
 
@@ -129,7 +131,10 @@ export default function ContactPage() {
                     <p className="contact-location-city">{location.city}</p>
                     <h4 className="contact-location-title">{location.title}</h4>
                     <p className="contact-location-address">{location.address}</p>
-                    <a href={location.mapUrl} target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-sm">Open in Maps</a>
+                    <div className="location-actions">
+                      <a href={location.bookingUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">Book This Location</a>
+                      <a href={location.mapUrl} target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-sm">Open in Maps</a>
+                    </div>
                   </div>
                 </article>
               ))}

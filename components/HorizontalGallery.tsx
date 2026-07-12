@@ -1,9 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import Image from "next/image";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const galleryItems = [
   {
@@ -59,44 +57,28 @@ type HorizontalGalleryProps = {
 };
 
 export default function HorizontalGallery({ items = galleryItems }: HorizontalGalleryProps) {
-  const sectionRef = useRef<HTMLDivElement | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    if (!sectionRef.current || !trackRef.current) return;
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    const section = sectionRef.current;
+  const scrollTrack = (direction: -1 | 1) => {
     const track = trackRef.current;
+    if (!track) return;
 
-    const ctx = gsap.context(() => {
-      const scrollDistance = track.scrollWidth - section.clientWidth;
-
-      if (scrollDistance <= 0) return;
-
-      gsap.to(track, {
-        x: () => `-${scrollDistance}px`,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: () => `+=${track.scrollWidth}`,
-          pin: true,
-          scrub: true,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      });
-    }, section);
-
-    return () => ctx.revert();
-  }, []);
+    const distance = Math.max(track.clientWidth * 0.82, 300);
+    track.scrollBy({ left: distance * direction, behavior: "smooth" });
+  };
 
   return (
-    <div className="gallery-section-inner" ref={sectionRef}>
-      <div className="gallery-scroller">
-        <div className="gallery-track" ref={trackRef}>
+    <div className="gallery-section-inner">
+      <div className="carousel-controls">
+        <button type="button" className="carousel-nav-btn" aria-label="Scroll gallery left" onClick={() => scrollTrack(-1)}>
+          <span aria-hidden="true">&#8592;</span>
+        </button>
+        <button type="button" className="carousel-nav-btn" aria-label="Scroll gallery right" onClick={() => scrollTrack(1)}>
+          <span aria-hidden="true">&#8594;</span>
+        </button>
+      </div>
+      <div className="gallery-scroller" ref={trackRef}>
+        <div className="gallery-track">
           {items.map((item) => (
             <article className="gallery-card" key={item.id}>
               <div className="gallery-image">

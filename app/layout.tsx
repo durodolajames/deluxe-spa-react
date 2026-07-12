@@ -3,6 +3,7 @@ import { CartProvider } from '@/lib/cart-context';
 import Header from '@/components/ui/Header';
 import Footer from '@/components/ui/Footer';
 import { ScrollRevealInit } from '@/components/ScrollRevealInit';
+import PageTransition from '@/components/PageTransition';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -23,7 +24,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ScrollRevealInit />
         <CartProvider>
           <Header />
-          <main>{children}</main>
+          <main>
+            <PageTransition>{children}</PageTransition>
+          </main>
           <Footer />
         </CartProvider>
       </body>

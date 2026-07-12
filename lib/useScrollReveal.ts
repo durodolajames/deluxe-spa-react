@@ -18,9 +18,8 @@ export function useScrollReveal() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            // Keep revealed sections visible to avoid content disappearing
-            // when users continue scrolling through the page.
-            observer.unobserve(entry.target);
+          } else {
+            entry.target.classList.remove('visible');
           }
         });
       },

@@ -19,22 +19,20 @@ export interface ServiceCategory {
 }
 
 export const products: Product[] = [
-  { id: 101, name: "Triple Delight Glutathione Body Lotion", price: 18000, category: "Body Lotions", description: "Rich glutathione lotion for visibly brighter skin", image: "/images/Pro.jpeg" },
-  { id: 102, name: "Brightening Body Milk Lotion", price: 10000, category: "Body Lotions", description: "Lightweight daily body milk that boosts glow", image: "/images/Pro1.jpeg" },
-  { id: 103, name: "Intense Lightening Lotion", price: 25500, category: "Body Lotions", description: "Targeted intensive lotion for uneven skin tone", image: "/images/Pro3.jpeg" },
-  { id: 104, name: "Lightening Body Lotion", price: 15000, category: "Body Lotions", description: "Moisturizing body lotion with brightening support", image: "/images/Pro4.jpeg" },
-  { id: 201, name: "Lightening Face Wash", price: 10000, category: "Face Care", description: "Gentle cleanser for clearer, brighter skin" },
-  { id: 202, name: "Day Face Cream", price: 10000, category: "Face Care", description: "Hydrating daytime cream for daily radiance" },
-  { id: 203, name: "Night Face Cream", price: 10000, category: "Face Care", description: "Overnight nourishing cream for skin renewal" },
-  { id: 204, name: "Acne Face Wash", price: 10000, category: "Face Care", description: "Clarifying wash formulated for acne-prone skin" },
-  { id: 205, name: "Lightening Oil", price: 15000, category: "Face Care", description: "Nourishing brightening oil for glow support" },
-  { id: 301, name: "Triple Delight Body Wash", price: 15000, category: "Body Care", description: "Refreshing body wash for soft, clean skin" },
-  { id: 302, name: "Glow Oil (200ml)", price: 10000, category: "Body Care", description: "Large-size glow oil for long-lasting sheen" },
-  { id: 303, name: "Glow Oil (100ml)", price: 5000, category: "Body Care", description: "Travel-size glow oil for everyday use" },
-  { id: 304, name: "Deep Lightening Body Scrub", price: 8000, category: "Body Care", description: "Deep exfoliating scrub to smooth rough areas" },
-  { id: 305, name: "Advance Lightening Liquid Black Soap", price: 10000, category: "Body Care", description: "Liquid black soap for deep cleansing and brightening" },
-  { id: 306, name: "Intense Lightening Black Soap", price: 10000, category: "Body Care", description: "Traditional black soap for a brighter complexion" },
-  { id: 307, name: "Intense Lightening Scrub", price: 10500, category: "Body Care", description: "Polishing scrub for improved texture and tone" },
+  { id: 101, name: "Intense Lightening Black Soap", price: 10000, category: "Body Care", description: "Traditional black soap for deep cleansing and brightening", image: "/images/Intense%20Lightening%20Black%20Soap.jpg" },
+  { id: 102, name: "Lightening Oil", price: 15000, category: "Face Care", description: "Nourishing brightening oil for improved glow", image: "/images/Lightening%20Oil.jpg" },
+  { id: 103, name: "Intense Lightening Scrub", price: 10500, category: "Body Care", description: "Exfoliating scrub for smoother and brighter skin", image: "/images/Intense%20Lightening%20Body%20Scrub.jpg" },
+  { id: 104, name: "Glow Oil (100ml)", price: 5000, category: "Body Care", description: "Travel-size glow oil for everyday use", image: "/images/Glow%20Oil.jpg" },
+  { id: 105, name: "Glow Oil (200ml)", price: 10000, category: "Body Care", description: "Large-size glow oil for long-lasting sheen", image: "/images/Glow%20Oil.jpg" },
+  { id: 106, name: "Brightening Body Milk", price: 10000, category: "Body Lotions", description: "Daily body milk that helps improve skin radiance", image: "/images/Brightening%20Body%20Milk%20Lotion.jpg" },
+  { id: 107, name: "Acne Face Wash", price: 10000, category: "Face Care", description: "Clarifying face wash for acne-prone skin", image: "/images/Acne%20Face%20Wash.jpg" },
+  { id: 108, name: "Intense Lightening Lotion", price: 25500, category: "Body Lotions", description: "Intensive lotion for uneven skin tone", image: "/images/Intense%20Lightening%20Lotion.jpg" },
+  { id: 109, name: "Intense Lightening Body Scrub", price: 8000, category: "Body Care", description: "Body scrub that removes buildup and smooths texture", image: "/images/Intense%20Lightening%20Body%20Scrub.jpg" },
+  { id: 110, name: "Advanced Lightening Liquid Black Soap", price: 10000, category: "Body Care", description: "Liquid black soap for cleansing and brightening support", image: "/images/Advance%20Lightening%20Black%20Soap.jpg" },
+  { id: 111, name: "Day Face Cream", price: 10000, category: "Face Care", description: "Hydrating daytime face cream for daily radiance", image: "/images/Day%20Face%20Cream.jpg" },
+  { id: 112, name: "Night Face Cream", price: 10000, category: "Face Care", description: "Nourishing night cream to support overnight renewal", image: "/images/Night%20Day%20Cream.jpg" },
+  { id: 113, name: "Lightening Face Wash", price: 10000, category: "Face Care", description: "Gentle cleanser for a clearer, brighter complexion", image: "/images/Lightening%20Face%20Wash.jpg" },
+  { id: 114, name: "Depigmenting Toner", price: 35000, category: "Face Care", description: "Targeted toner for uneven tone and dark spots", image: "/images/Dipigmenting Toner.jpg" },
 ];
 
 export const serviceCategories: ServiceCategory[] = [

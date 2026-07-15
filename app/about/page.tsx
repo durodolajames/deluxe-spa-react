@@ -25,7 +25,12 @@ export default function AboutPage() {
               <span className="label-lg" style={{ color: 'var(--primary)', display: 'inline-block', marginBottom: 16 }}>Who We Are</span>
               <h1 className="headline-lg" style={{ marginBottom: 24, color: 'var(--deep-espresso)' }}>Where expertise meets the art of skincare.</h1>
               <p className="body-md" style={{ color: 'var(--on-surface-variant)', marginBottom: 20 }}>
-                At Deluxe Skin Care, we deliver clinical-grade skincare treatments and bespoke facials tailored to your skin needs. Every experience is designed to restore, rejuvenate, and illuminate your skin while still feeling deeply relaxing and personal.
+                At Deluxe Skincare and Spa, we specialize in personalized, results-driven skincare designed to restore, rejuvenate, and maintain healthy skin. Every treatment is carefully tailored to your unique skin type, concerns, and goals because no two skins are the same.
+              </p>
+               <p className="body-md" style={{ color: 'var(--on-surface-variant)', marginBottom: 20 }}>
+                Combining advanced medical-grade treatments, premium skincare products, and evidence-based techniques, we deliver safe, effective care with visible, lasting results.
+
+Rooted in quality, integrity, and expertise, we provide a luxurious experience where science meets skincare, helping you achieve healthy, radiant skin with confidence.
               </p>
               <div className="about-intro-stats">
                 <div>
@@ -33,7 +38,7 @@ export default function AboutPage() {
                   <div className="label-sm about-intro-stat-label">Service Categories</div>
                 </div>
                 <div>
-                  <div className="about-intro-stat-value">100+</div>
+                  <div className="about-intro-stat-value">15k+</div>
                   <div className="label-sm about-intro-stat-label">Treatments Offered</div>
                 </div>
                 <div>
@@ -76,34 +81,28 @@ export default function AboutPage() {
             <div className="about-image about-image-stack fade-up">
               <div className="about-image-main">
                 <Image
-                  src="/images/deluxe.jpeg"
+                  src="/images/deluxe.jpg"
                   alt="Deluxe Skin Care treatment room"
                   fill
                   sizes="(max-width: 768px) 100vw, 45vw"
                   style={{ objectFit: 'cover' }}
                 />
               </div>
-              <div className="about-image-float">
-                <Image
-                  src="/images/deluxe_certificate.jpeg"
-                  alt="Deluxe Skin Care certification"
-                  fill
-                  sizes="(max-width: 768px) 42vw, 20vw"
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
             </div>
             <div className="fade-up">
               <span className="label-lg" style={{ color: 'var(--primary)', display: 'inline-block', marginBottom: 16 }}>Our Story</span>
-              <h1 className="headline-lg" style={{ marginBottom: 24, color: 'var(--deep-espresso)' }}>Where Clinical Expertise Meets Luxury</h1>
+              <h1 className="headline-lg" style={{ marginBottom: 24, color: 'var(--deep-espresso)' }}>Where Clinical Expertise Meets Wellness</h1>
               <p className="body-md" style={{ color: 'var(--on-surface-variant)', marginBottom: 20 }}>
-                Deluxe Skin Care was founded with a singular vision: to bridge the gap between clinical dermatology and the indulgent experience of a luxury spa. We believe that effective skincare should never feel clinical or cold — it should feel like self-care.
+                Deluxe Skincare &amp; Medspa was founded with a simple purpose, To provide effective, affordable, and results-driven skincare solutions tailored to the unique needs of every client. Built on the belief that no two skins are the same, the practice was created to offer personalized care backed by expertise, advanced treatments, and carefully selected professional skincare products.
               </p>
               <p className="body-md" style={{ color: 'var(--on-surface-variant)', marginBottom: 20 }}>
-                Every treatment in our menu is backed by medical science and delivered with the precision of trained professionals. From our signature facials to advanced laser therapies, we use only medical-grade equipment and clinically proven protocols.
+                What began as a corrective skincare clinic has evolved into a destination for both skin health and holistic wellness. While healthy, radiant skin remains at the heart of every treatment, the experience now extends beyond skincare to include restorative spa and advanced medspa services that promote overall well-being. This integrated approach recognizes the close connection between healthy skin, confidence, and self-care.
+              </p>
+              <p className="body-md" style={{ color: 'var(--on-surface-variant)', marginBottom: 20 }}>
+                Every step of the journey has been shaped by listening to clients, embracing innovation, and continually refining treatments to achieve better outcomes. This commitment to learning and excellence has strengthened the belief that truly effective skincare is never one-size-fits-all—it is thoughtful, evidence based and tailored to each individual's needs.
               </p>
               <p className="body-md" style={{ color: 'var(--on-surface-variant)', marginBottom: 32 }}>
-                Our skincare product line is formulated with the same philosophy — professional-grade ingredients, luxurious textures, and visible results. Each product is designed to extend the benefits of your in-spa treatments into your daily routine.
+                Today, Deluxe Skincare &amp; Medspa is a trusted destination where clinical expertise meets wellness. Guided by the values of quality, integrity, and discipline, every treatment is designed to restore skin health, rejuvenate the complexion, and create a luxurious experience that leaves clients feeling confident, refreshed, and cared for.
               </p>
               <Link href="/services" className="btn btn-primary">Explore Our Services</Link>
             </div>
@@ -126,22 +125,22 @@ export default function AboutPage() {
               <div className="feature-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
               </div>
-              <h3 className="feature-title">Clinical Integrity</h3>
-              <p className="feature-text">Every treatment is evidence-based. We never compromise on safety, sanitation, or professional standards.</p>
+              <h3 className="feature-title">Quality</h3>
+              <p className="feature-text">We are committed to excellence in every detail, from the treatments we provide to the products we use. Every service is tailored to your unique skin needs using advanced techniques and evidence-based solutions.</p>
             </div>
             <div className="feature-item fade-up d2">
               <div className="feature-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
               </div>
-              <h3 className="feature-title">Personalized Care</h3>
-              <p className="feature-text">No two skins are alike. Every client receives a customized treatment plan based on their unique concerns and goals.</p>
+              <h3 className="feature-title">Integrity</h3>
+              <p className="feature-text">Honesty, transparency, and your well-being guide every recommendation we make. We believe in ethical, personalized care that puts your skin health first</p>
             </div>
             <div className="feature-item fade-up d3">
               <div className="feature-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
               </div>
-              <h3 className="feature-title">Luxury Experience</h3>
-              <p className="feature-text">From the moment you walk in, every detail is designed for comfort, relaxation, and a sense of sanctuary.</p>
+              <h3 className="feature-title">Discipline</h3>
+              <p className="feature-text">We are dedicated to consistency, continuous learning, and maintaining the highest standards of professionalism to deliver exceptional care and lasting results.</p>
             </div>
           </div>
         </div>
@@ -157,7 +156,7 @@ export default function AboutPage() {
           <div className="faq-layout">
             <div className="faq-image-wrap fade-up d3">
               <Image
-                src="/images/showcase.jpeg"
+                src="/images/recep.jpeg"
                 alt="Deluxe Skin Care FAQ"
                 width={1600}
                 height={900}

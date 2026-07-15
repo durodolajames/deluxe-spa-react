@@ -28,7 +28,7 @@ const contactLocations = [
 
 const weeklyHours = [
   { day: 'Monday', time: 'Closed' },
-  { day: 'Tuesday - Saturday', time: '10:00 AM - 6:00 PM' },
+  { day: 'Tuesday - Saturday', time: '9:00 AM - 6:00 PM' },
   { day: 'Sunday', time: '12:00 PM - 5:00 PM' },
 ];
 
@@ -39,7 +39,7 @@ export default function ContactPage() {
         <div className="section-header" style={{ marginBottom: 64 }}>
           <span className="label-lg section-label fade-up d1">Get in Touch</span>
           <h1 className="headline-lg section-title fade-up d2">Contact Us</h1>
-          <p className="body-md section-text fade-up d3">Book a consultation, ask about our services, or inquire about product availability. We&apos;re here to help.</p>
+          <p className="body-md section-text fade-up d3">Book a consultation, ask about our services, or inquire about product availability. We are here to help.</p>
         </div>
 
         <div className="contact-grid">

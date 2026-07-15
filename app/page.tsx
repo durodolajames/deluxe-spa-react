@@ -224,34 +224,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Post-Hero Feature Grid */}
-      <section id="services" className="section medspa-features">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="headline-md section-title fade-up d1">Expert Care with a Clinical Touch</h2>
-            <p className="body-md section-text fade-up d2">
-              Advanced medical aesthetics designed to help you look refreshed, feel confident, and achieve naturally beautiful results.
-            </p>
-          </div>
-          <div className="medspa-grid">
-            <div className="medspa-card medspa-card-strong medspa-card-showcase fade-up d2">
-              <div className="medspa-icon">🏥</div>
-              <div className="medspa-card-copy">
-                <h3>Advanced Aesthetic Treatments</h3>
-                <p>Skin rejuvenation, IV therapy, weight management, laser treatments, body contouring, and customized wellness plans all designed around your goals.</p>
-              </div>
-            </div>
-            <div className="medspa-card medspa-card-image fade-up d4">
-              <div className="medspa-card-image-copy">
-                <p className="eyebrow">Concierge support</p>
-                <h3>Concierge-Level Experience</h3>
-                <p>Enjoy seamless scheduling, attentive support, and ongoing guidance throughout every step of your transformation.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {showSplitSections && (
         <>
           {/* Split Showcase - Services */}

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { products, productCategories } from '@/lib/data';
 import { formatPrice } from '@/lib/utils';
 import { useCart } from '@/lib/cart-context';
@@ -51,14 +52,24 @@ export default function ShopPage() {
               <span>{category}</span>
               <span className="service-count">{items.length} product{items.length !== 1 ? 's' : ''}</span>
             </div>
-            <div className="grid-4">
+            <div className="grid-4 shop-products-grid">
               {items.map((product, idx) => (
                 <div className={`product-card fade-up d${(idx % 5) + 1}`} key={product.id}>
                   <div className="product-image">
-                    <div className="product-image-placeholder">
-                      {product.name.split(' ').slice(0, 2).join(' ')}<br />
-                      {product.name.split(' ').slice(2).join(' ')}
-                    </div>
+                    {product.image ? (
+                      <Image
+                        src={product.image}
+                        alt={product.name}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                        style={{ objectFit: 'cover' }}
+                      />
+                    ) : (
+                      <div className="product-image-placeholder">
+                        {product.name.split(' ').slice(0, 2).join(' ')}<br />
+                        {product.name.split(' ').slice(2).join(' ')}
+                      </div>
+                    )}
                   </div>
                   <div className="product-body">
                     <div className="product-category">{product.category}</div>
@@ -78,7 +89,7 @@ export default function ShopPage() {
                         Add to Cart
                       </button>
                       <button
-                        className="btn btn-sm btn-secondary"
+                        className="btn btn-sm btn-secondary btn-buy-now"
                         onClick={() => checkoutSingle({
                           id: product.id,
                           name: product.name,

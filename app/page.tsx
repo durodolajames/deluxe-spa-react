@@ -10,7 +10,7 @@ const beforeAfterCases = [
   {
     id: 'client-acne-1',
     title: 'Acne Treatment Case 01',
-    concern: 'Chemical peel progress',
+    concern: 'Chemical peel and Microneedling',
     beforeImage: '/images/Facial_before.jpeg',
     afterImage: '/images/Facial_after.jpeg',
     beforeLabel: 'Pre-Treatment',
@@ -28,7 +28,7 @@ const beforeAfterCases = [
   {
     id: 'client-texture-3',
     title: 'Laser Hair Removal Case 01',
-    concern: 'Smoother finish and reduced visible growth',
+    concern: 'Before and after 2 sessions of laser hair removal',
     beforeImage: '/images/Wax_before.jpeg',
     afterImage: '/images/Wax_after1.jpeg',
     beforeLabel: 'Before Laser',
@@ -37,7 +37,7 @@ const beforeAfterCases = [
   {
     id: 'client-sensitive-4',
     title: 'Laser Hair Removal Case 02',
-    concern: 'Cleaner finish with calmer skin look',
+    concern: 'Before and after 4 sessions of laser hair removal',
     beforeImage: '/images/wax1.jpeg',
     afterImage: '/images/wax.jpeg',
     beforeLabel: 'Before Laser',
@@ -90,7 +90,7 @@ const treatmentShowcase = [
   },
   {
     id: 'treatment-cosmetology',
-    label: 'Cosmetology',
+    label: 'Peels',
     title: 'Chemical Peels',
     image: '/images/Chemical-peel.jpg',
     href: '/services',
@@ -104,14 +104,14 @@ const treatmentShowcase = [
   },
   {
     id: 'treatment-microneedling',
-    label: 'Advanced Facial',
+    label: 'Advanced Treatment',
     title: 'Microneedling',
     image: '/images/Microneedling.jpg',
     href: '/services',
   },
   {
     id: 'treatment-signature',
-    label: 'Signature Care',
+    label: 'Signature Face lift',
     title: 'Deluxe Signature Facial',
     image: '/images/deluxe-signature-facelift.jpg',
     href: '/services',
@@ -143,7 +143,7 @@ const clinicLocations = [
 
 const weeklyHours = [
   { day: 'Monday', time: 'Closed' },
-  { day: 'Tuesday - Saturday', time: '10:00 AM - 6:00 PM' },
+  { day: 'Tuesday - Saturday', time: '9:00 AM - 6:00 PM' },
   { day: 'Sunday', time: '12:00 PM - 5:00 PM' },
 ];
 
@@ -204,7 +204,7 @@ export default function HomePage() {
           <div className="section-header">
             <span className="label-lg section-label fade-up d1">Our Impact in Numbers</span>
             <h2 className="headline-md section-title fade-up d2">Clinical solutions for healthier skin</h2>
-            <p className="body-md section-text fade-up d3">Trusted care, measurable outcomes, and consistent results across corrective and rejuvenation treatments.</p>
+            <p className="body-md section-text fade-up d3">Trusted expertise delivering measurable outcomes and consistent results through corrective and rejuvenating treatments.</p>
           </div>
           <ImpactStats stats={impactStats} />
         </div>
@@ -338,7 +338,7 @@ export default function HomePage() {
           <div className="team-highlight-content fade-up d2">
             <h2 className="headline-lg team-highlight-title">The Experts Behind Every Result</h2>
             <p className="body-lg team-highlight-text">
-              Your care is led by a multidisciplinary medical team committed to evidence-based treatments, precision diagnostics, and long-term skin outcomes.
+              Every treatment is delivered by experienced professionals under medical oversight, combining evidence-based protocols with personalized treatment plans to achieve healthy, lasting results.
             </p>
             <Link href="/about" className="btn btn-secondary team-highlight-cta">About Us</Link>
           </div>

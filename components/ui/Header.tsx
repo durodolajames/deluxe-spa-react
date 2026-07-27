@@ -9,6 +9,7 @@ import CartDrawer from './CartDrawer';
 
 const navLinks = [
   { href: '/', label: 'Home' },
+  { href: '/gallery', label: 'Gallery' },
   { href: '/services', label: 'Services' },
   { href: '/shop', label: 'Shop' },
   { href: '/about', label: 'About' },

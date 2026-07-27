@@ -27,7 +27,7 @@ export const products: Product[] = [
   { id: 106, name: "Brightening Body Milk", price: 10000, category: "Body Lotions", description: "Daily body milk that helps improve skin radiance", image: "/images/Brightening%20Body%20Milk%20Lotion.jpg" },
   { id: 107, name: "Acne Face Wash", price: 10000, category: "Face Care", description: "Clarifying face wash for acne-prone skin", image: "/images/Acne%20Face%20Wash.jpg" },
   { id: 108, name: "Intense Lightening Lotion", price: 25500, category: "Body Lotions", description: "Intensive lotion for uneven skin tone", image: "/images/Intense%20Lightening%20Lotion.jpg" },
-  { id: 109, name: "Intense Lightening Body Scrub", price: 8000, category: "Body Care", description: "Body scrub that removes buildup and smooths texture", image: "/images/Intense%20Lightening%20Body%20Scrub.jpg" },
+  { id: 109, name: "Intense Lightening Body Scrub", price: 10500, category: "Body Care", description: "Body scrub that removes buildup and smooths texture", image: "/images/Intense%20Lightening%20Body%20Scrub.jpg" },
   { id: 110, name: "Advanced Lightening Liquid Black Soap", price: 10000, category: "Body Care", description: "Liquid black soap for cleansing and brightening support", image: "/images/Advance%20Lightening%20Black%20Soap.jpg" },
   { id: 111, name: "Day Face Cream", price: 10000, category: "Face Care", description: "Hydrating daytime face cream for daily radiance", image: "/images/Day%20Face%20Cream.jpg" },
   { id: 112, name: "Night Face Cream", price: 10000, category: "Face Care", description: "Nourishing night cream to support overnight renewal", image: "/images/Night%20Day%20Cream.jpg" },

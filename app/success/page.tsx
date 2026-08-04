@@ -13,6 +13,7 @@ function SuccessContent() {
     service: 'Our team will contact you within 24 hours to confirm your appointment.',
     product: 'Your order will be processed and delivered within 2-3 business days.',
     cart: 'Our team will contact you within 24 hours to confirm your booking and delivery details.',
+    transfer: 'Paystack is unavailable. Please complete payment by bank transfer using the reference above and send proof of payment to the store.',
   };
 
   return (

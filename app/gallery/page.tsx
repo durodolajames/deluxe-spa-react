@@ -26,7 +26,7 @@ const beforeAfterCases = [
     title: 'Laser Hair Removal Progress',
     concern: 'Visible reduction after 2 sessions on treatment area',
     beforeImage: '/images/Wax_before.jpeg',
-    afterImage: '/images/Wax_after1.jpeg',
+    afterImage: '/images/BnA1i.jpg',
     beforeLabel: 'Session 0',
     afterLabel: 'Session 2',
   },
@@ -79,13 +79,54 @@ const imagePairs = [
     id: 'proof-3',
     title: 'Laser Progress',
     beforeImage: '/images/Wax_before.jpeg',
-    afterImage: '/images/Wax_after1.jpeg',
+    afterImage: '/images/BnA1i.jpg',
+  
   },
   {
     id: 'proof-4',
     title: 'Laser Completion',
     beforeImage: '/images/wax1.jpeg',
     afterImage: '/images/wax.jpeg',
+  },
+  {
+    id: 'proof-5',
+    title: 'Treatment Case 05',
+    beforeImage: '/images/BnA2i.jpg',
+    afterImage: '/images/BnA2ii.jpg',
+  },
+  {
+    id: 'proof-6',
+    title: 'Treatment Case 06',
+    beforeImage: '/images/BnA3i.jpg',
+    afterImage: '/images/BnA3ii.jpg',
+  },
+];
+
+const combinedResults = [
+  {
+    id: 'combined-1',
+    title: 'Combined Result 01',
+    image: '/images/BnA4.jpg',
+  },
+  {
+    id: 'combined-2',
+    title: 'Combined Result 02',
+    image: '/images/BnA3.jpg',
+  },
+  {
+    id: 'combined-3',
+    title: 'Combined Result 03',
+    image: '/images/BnA6.jpg',
+  },
+  {
+    id: 'combined-4',
+    title: 'Combined Result 04',
+    image: '/images/BnA5.jpg',
+  },
+  {
+    id: 'combined-5',
+    title: 'Combined Result 05',
+    image: '/images/BnA2.jpg',
   },
 ];
 
@@ -159,6 +200,30 @@ export default function GalleryPage() {
                     <span className="gallery-proof-badge">After</span>
                     <Image src={item.afterImage} alt={`${item.title} after`} fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
                   </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section gallery-combined-section">
+        <div className="container">
+          <div className="section-header">
+            <span className="label-lg section-label fade-up d1">Transformation Gallery</span>
+            <h2 className="headline-md section-title fade-up d2">Combined Results</h2>
+            <p className="body-md section-text fade-up d3">
+              A curated collection of finished treatment outcomes for selected client journeys.
+            </p>
+          </div>
+          <div className="gallery-proof-grid gallery-combined-grid">
+            {combinedResults.map((item, index) => (
+              <article className={`gallery-proof-card gallery-combined-card fade-up d${(index % 5) + 1}`} key={item.id}>
+                <div className="gallery-proof-head">
+                  <h3>{item.title}</h3>
+                </div>
+                <div className="gallery-proof-image-wrap gallery-combined-image-wrap">
+                  <Image src={item.image} alt={`${item.title} result`} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: 'cover' }} />
                 </div>
               </article>
             ))}

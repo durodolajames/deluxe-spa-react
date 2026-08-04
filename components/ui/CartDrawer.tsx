@@ -2,16 +2,16 @@
 
 import { useCart } from '@/lib/cart-context';
 import { formatPrice } from '@/lib/utils';
-import { checkoutCart } from '@/lib/paystack';
+import { checkoutCart, isPaystackEnabled } from '@/lib/paystack';
 
 export default function CartDrawer() {
   const {
-    items, location, setLocation, removeItem, updateQty, clearCart,
-    subtotal, shipping, total, hasPhysicalItems, isOpen, setIsOpen
+    items, removeItem, updateQty, clearCart,
+    subtotal, total, hasPhysicalItems, isOpen, setIsOpen
   } = useCart();
 
   const handleCheckout = () => {
-    checkoutCart(items, location);
+    checkoutCart(items);
   };
 
   return (
@@ -72,41 +72,24 @@ export default function CartDrawer() {
 
         {items.length > 0 && (
           <div className="cart-footer">
-            {hasPhysicalItems && (
-              <div className="location-box">
-                <label htmlFor="location-selector">Delivery Location</label>
-                <select
-                  id="location-selector"
-                  className="location-select"
-                  value={location}
-                  onChange={(e) => setLocation(e.target.value)}
-                >
-                  <option value="">-- Select Location --</option>
-                  <option value="mainland">Mainland (+₦2,500)</option>
-                  <option value="island">Island (+₦4,000)</option>
-                </select>
-              </div>
-            )}
-
             <div className="price-breakdown">
               <div className="breakdown-row">
                 <span>Subtotal</span>
                 <span>{formatPrice(subtotal)}</span>
               </div>
-              {hasPhysicalItems && (
-                <div className="breakdown-row shipping-row">
-                  <span>Shipping</span>
-                  <span>{location ? formatPrice(shipping) : 'Select location'}</span>
-                </div>
-              )}
               <div className="breakdown-row total">
                 <span>Total</span>
                 <span>{formatPrice(total)}</span>
               </div>
             </div>
 
+            {!isPaystackEnabled && (
+              <p className="cart-checkout-note" style={{ marginBottom: 12, color: '#6B5A3B', fontSize: 14 }}>
+                Paystack is currently unavailable. Please place your order and complete payment by bank transfer.
+              </p>
+            )}
             <button className="cart-checkout-btn" onClick={handleCheckout}>
-              Checkout with Paystack
+              {isPaystackEnabled ? 'Checkout with Paystack' : 'Checkout with Bank Transfer'}
             </button>
             <button className="cart-clear-btn" onClick={clearCart}>
               Clear Cart

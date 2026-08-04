@@ -14,14 +14,11 @@ export interface CartItem {
 
 interface CartContextType {
   items: CartItem[];
-  location: string;
   addItem: (item: Omit<CartItem, 'qty'>) => void;
   removeItem: (id: number, type: string) => void;
   updateQty: (id: number, type: string, qty: number) => void;
-  setLocation: (loc: string) => void;
   clearCart: () => void;
   subtotal: number;
-  shipping: number;
   total: number;
   count: number;
   hasPhysicalItems: boolean;
@@ -32,11 +29,6 @@ interface CartContextType {
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-const SHIPPING_RATES: Record<string, number> = {
-  mainland: 2500,
-  island: 4000,
-};
-
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>(() => {
     if (typeof window !== 'undefined') {
@@ -46,23 +38,12 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     return [];
   });
 
-  const [location, setLocationState] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('deluxe_location') || '';
-    }
-    return '';
-  });
-
   const [isOpen, setIsOpen] = useState(false);
   const [notification, setNotification] = useState<string | null>(null);
 
   useEffect(() => {
     localStorage.setItem('deluxe_cart', JSON.stringify(items));
   }, [items]);
-
-  useEffect(() => {
-    localStorage.setItem('deluxe_location', location);
-  }, [location]);
 
   const addItem = useCallback((item: Omit<CartItem, 'qty'>) => {
     setItems(prev => {
@@ -91,28 +72,21 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     );
   }, []);
 
-  const setLocation = useCallback((loc: string) => {
-    setLocationState(loc);
-  }, []);
-
   const clearCart = useCallback(() => {
     setItems([]);
-    setLocationState('');
     localStorage.removeItem('deluxe_cart');
-    localStorage.removeItem('deluxe_location');
   }, []);
 
   const hasPhysicalItems = items.some(i => i.type === 'product');
   const hasServiceItems = items.some(i => i.type === 'service');
   const subtotal = items.reduce((sum, i) => sum + i.price * i.qty, 0);
-  const shipping = hasPhysicalItems && location ? SHIPPING_RATES[location] || 0 : 0;
-  const total = subtotal + shipping;
+  const total = subtotal;
   const count = items.reduce((sum, i) => sum + i.qty, 0);
 
   return (
     <CartContext.Provider value={{
-      items, location, addItem, removeItem, updateQty, setLocation, clearCart,
-      subtotal, shipping, total, count, hasPhysicalItems, hasServiceItems, isOpen, setIsOpen
+      items, addItem, removeItem, updateQty, clearCart,
+      subtotal, total, count, hasPhysicalItems, hasServiceItems, isOpen, setIsOpen
     }}>
       {children}
       {notification && (

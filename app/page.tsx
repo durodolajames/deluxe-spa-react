@@ -30,7 +30,7 @@ const beforeAfterCases = [
     title: 'Laser Hair Removal Case 01',
     concern: 'Before and after 2 sessions of laser hair removal',
     beforeImage: '/images/Wax_before.jpeg',
-    afterImage: '/images/Wax_after1.jpeg',
+    afterImage: '/images/BnA1i.jpg',
     beforeLabel: 'Before Laser',
     afterLabel: 'After 2 Sessions',
   },

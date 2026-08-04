@@ -1607,6 +1607,10 @@ button {
   background: linear-gradient(180deg, var(--surface-container-low) 0%, var(--surface-container-lowest) 100%);
 }
 
+.gallery-combined-section {
+  background: var(--surface-container-lowest);
+}
+
 .gallery-proof-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1660,6 +1664,16 @@ button {
   background: rgba(18, 16, 14, 0.75);
   border-radius: var(--radius-full);
   padding: 6px 10px;
+}
+
+.gallery-combined-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.gallery-combined-card .gallery-proof-image-wrap {
+  min-height: 280px;
 }
 
 .gallery-testimonials-section {

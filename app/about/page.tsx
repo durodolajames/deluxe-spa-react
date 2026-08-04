@@ -25,12 +25,13 @@ export default function AboutPage() {
               <span className="label-lg" style={{ color: 'var(--primary)', display: 'inline-block', marginBottom: 16 }}>Who We Are</span>
               <h1 className="headline-lg" style={{ marginBottom: 24, color: 'var(--deep-espresso)' }}>Where expertise meets the art of skincare.</h1>
               <p className="body-md" style={{ color: 'var(--on-surface-variant)', marginBottom: 20 }}>
-                At Deluxe Skincare and Spa, we specialize in personalized, results-driven skincare designed to restore, rejuvenate, and maintain healthy skin. Every treatment is carefully tailored to your unique skin type, concerns, and goals because no two skins are the same.
+                At Deluxe Skincare and Spa, we are committed to quality, integrity, and personalized care. Every treatment is tailored to your unique skin type, concerns and goals because no two skins are the same.
               </p>
-               <p className="body-md" style={{ color: 'var(--on-surface-variant)', marginBottom: 20 }}>
-                Combining advanced medical-grade treatments, premium skincare products, and evidence-based techniques, we deliver safe, effective care with visible, lasting results.
-
-Rooted in quality, integrity, and expertise, we provide a luxurious experience where science meets skincare, helping you achieve healthy, radiant skin with confidence.
+              <p className="body-md" style={{ color: 'var(--on-surface-variant)', marginBottom: 20 }}>
+                We combine advanced medical-grade treatments, premium skincare products, and proven techniques to deliver safe, effective, and visible results that support long-term skin health.
+              </p>
+              <p className="body-md" style={{ color: 'var(--on-surface-variant)', marginBottom: 20 }}>
+                By blending science, nature, and expertise, we create a luxurious, results-driven experience that restores confidence and helps you achieve your healthiest skin.
               </p>
               <div className="about-intro-stats">
                 <div>

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { products, productCategories } from '@/lib/data';
 import { formatPrice } from '@/lib/utils';
 import { useCart } from '@/lib/cart-context';
-import { checkoutSingle } from '@/lib/paystack';
+import { checkoutSingle, isPaystackEnabled } from '@/lib/paystack';
 
 export default function ShopPage() {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -98,7 +98,7 @@ export default function ShopPage() {
                           category: product.category,
                         })}
                       >
-                        Buy Now
+                        {isPaystackEnabled ? 'Buy Now' : 'Order with Bank Transfer'}
                       </button>
                     </div>
                   </div>

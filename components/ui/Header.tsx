@@ -91,6 +91,34 @@ export default function Header() {
             </Link>
           ))}
         </nav>
+
+        <div className="mobile-menu-footer">
+          <div className="mobile-menu-social">
+            <a href="https://www.instagram.com/deluxe_skincare?igsh=MWJzYmpta3gwbTJmeg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+              <span>Instagram</span>
+            </a>
+            <a href="https://wa.me/2349076860852" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M16.46 7.51a4.28 4.28 0 0 0-6.06 0c-1.15 1.16-1.24 2.96-.24 4.05l.16.18a1 1 0 0 1 .2.82l-.26 1.28a1 1 0 0 1-.98.8 11.14 11.14 0 0 1-3.22-.46 1 1 0 0 1-.74-1.13 17.36 17.36 0 0 1 .93-3.12 1 1 0 0 1 .86-.63h.02a1 1 0 0 1 .8.34c.81.91 1.96 1.64 3.22 1.93a1 1 0 0 1 .7.67l.37 1.03a1 1 0 0 1-.19.94 8.68 8.68 0 0 1-2.14 1.98 9.38 9.38 0 0 0 4.78 1.46 9.44 9.44 0 0 0 9.47-9.47 9.42 9.42 0 0 0-2.83-6.69z" />
+                <path d="M15.64 8.47c-.03-.18-.17-.34-.35-.37a.84.84 0 0 0-.38.03c-.11.03-.31.12-.48.26a.98.98 0 0 0-.31.44c-.06.14-.14.33-.17.4a.8.8 0 0 1-.17.29c-.11.1-.28.25-.47.41-.41.31-.76.44-1.03.44a.91.91 0 0 1-.54-.17c-.13-.09-.33-.24-.55-.43a3.67 3.67 0 0 0-.83-.44c-.17-.06-.31-.12-.44-.12a1.05 1.05 0 0 0-.74.24c-.2.18-.28.43-.27.7a2.62 2.62 0 0 0 .24 1.17 4.28 4.28 0 0 0 1.03 1.5 8.6 8.6 0 0 0 1.84 1.43c.96.53 1.64.55 2.25.35a1.1 1.1 0 0 0 .55-.41 1.22 1.22 0 0 0 .2-.64c.01-.22-.01-.31-.08-.42a1.09 1.09 0 0 0-.38-.42 3.14 3.14 0 0 0-.65-.36c-.21-.1-.41-.2-.47-.23z" />
+              </svg>
+              <span>WhatsApp</span>
+            </a>
+          </div>
+          <div className="mobile-menu-actions">
+            <Link href="/contact" className="btn btn-secondary" onClick={() => setMobileOpen(false)}>
+              Contact Us
+            </Link>
+            <Link href="/services" className="btn btn-primary" onClick={() => setMobileOpen(false)}>
+              Book Now
+            </Link>
+          </div>
+        </div>
       </div>
 
       <CartDrawer />

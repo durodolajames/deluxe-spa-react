@@ -357,6 +357,44 @@ button {
   color: var(--primary);
 }
 
+.mobile-menu-footer {
+  margin-top: 32px;
+  display: grid;
+  gap: 24px;
+}
+
+.mobile-menu-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.mobile-menu-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid var(--outline-variant);
+  color: var(--on-surface);
+  background: rgba(255,255,255,0.05);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.mobile-menu-social a:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-1px);
+}
+
+.mobile-menu-actions {
+  display: grid;
+  gap: 12px;
+}
+
+.mobile-menu-actions .btn {
+  width: 100%;
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;
@@ -2669,11 +2707,12 @@ button {
 
 .product-actions {
   display: flex;
+  flex-direction: column;
   gap: 12px;
 }
 
 .product-actions .btn {
-  flex: 1;
+  width: 100%;
   padding: 12px;
   font-size: 12px;
 }
@@ -3280,6 +3319,13 @@ button {
   }
   .product-price {
     font-size: 18px;
+  }
+  .product-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .product-actions .btn {
+    width: 100%;
   }
   .cart-drawer {
     max-width: 100%;

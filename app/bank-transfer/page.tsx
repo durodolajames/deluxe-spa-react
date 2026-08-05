@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { useCart } from '@/lib/cart-context';
 
 interface PendingTransferOrder {
   ref: string;
@@ -15,18 +16,22 @@ interface PendingTransferOrder {
 }
 
 export default function BankTransferPage() {
+  const { clearCart } = useCart();
   const [order, setOrder] = useState<PendingTransferOrder | null>(null);
 
   useEffect(() => {
     const raw = window.localStorage.getItem('deluxe_pending_transfer_order');
     if (raw) {
       try {
-        setOrder(JSON.parse(raw));
+        const storedOrder = JSON.parse(raw);
+        setOrder(storedOrder);
+        clearCart();
+        window.localStorage.removeItem('deluxe_pending_transfer_order');
       } catch (error) {
         console.error('Invalid pending transfer order', error);
       }
     }
-  }, []);
+  }, [clearCart]);
 
   if (!order) {
     return (
@@ -41,7 +46,7 @@ export default function BankTransferPage() {
   }
 
   const amountText = `₦${(order.amount / 100).toLocaleString()}`;
-  const whatsappUrl = `https://wa.me/2340000000000?text=${encodeURIComponent(`Hello Deluxe Skincare, I have completed a bank transfer for order ${order.ref}. Please confirm.`)}`;
+  const whatsappUrl = `https://wa.me/2349076860852?text=${encodeURIComponent(`Hello Deluxe Skincare, I have completed a bank transfer for order ${order.ref}. Please confirm.`)}`;
 
   return (
     <section className="section" style={{ paddingTop: 48 }}>

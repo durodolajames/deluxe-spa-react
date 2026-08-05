@@ -9,8 +9,8 @@ const beforeAfterCases = [
     concern: 'Corrective acne protocol with targeted peels and light therapy',
     beforeImage: '/images/Facial_before.jpeg',
     afterImage: '/images/Facial_after.jpeg',
-    beforeLabel: 'Week 1',
-    afterLabel: 'Week 6',
+    beforeLabel: 'Pre-Treatment',
+    afterLabel: 'Post-Treatment',
   },
   {
     id: 'gallery-acne-2',
@@ -18,8 +18,8 @@ const beforeAfterCases = [
     concern: 'Professional exfoliation and hydration-focused treatment plan',
     beforeImage: '/images/Facial_before2.jpeg',
     afterImage: '/images/Facial_after2.jpeg',
-    beforeLabel: 'Before Plan',
-    afterLabel: 'After Plan',
+    beforeLabel: 'Before Session',
+    afterLabel: 'After Session',
   },
   {
     id: 'gallery-laser-1',
@@ -27,8 +27,8 @@ const beforeAfterCases = [
     concern: 'Visible reduction after 2 sessions on treatment area',
     beforeImage: '/images/Wax_before.jpeg',
     afterImage: '/images/BnA1i.jpg',
-    beforeLabel: 'Session 0',
-    afterLabel: 'Session 2',
+    beforeLabel: 'Before Laser',
+    afterLabel: 'After 2 Sessions',
   },
   {
     id: 'gallery-laser-2',
@@ -36,7 +36,7 @@ const beforeAfterCases = [
     concern: 'Improved smoothness after 4 sessions',
     beforeImage: '/images/wax1.jpeg',
     afterImage: '/images/wax.jpeg',
-    beforeLabel: 'Start',
+    beforeLabel: 'Before Laser',
     afterLabel: 'After 4 Sessions',
   },
 ];
@@ -169,10 +169,10 @@ export default function GalleryPage() {
       <section className="section before-after-section gallery-slider-section">
         <div className="container">
           <div className="section-header">
-            <span className="label-lg section-label fade-up d1">Compare Progress</span>
-            <h2 className="headline-md section-title fade-up d2">Interactive Before &amp; After</h2>
+            <span className="label-lg section-label fade-up d1">Client Results</span>
+            <h2 className="headline-md section-title fade-up d2">Before &amp; After Transformations</h2>
             <p className="body-md section-text fade-up d3">
-              Drag the divider to compare treatment changes over time.
+              Slide to compare treatment progress and see how consistent care delivers visible skin improvement.
             </p>
           </div>
           <BeforeAfterSlider cases={beforeAfterCases} enableSessionShuffle={false} />

@@ -38,6 +38,7 @@ export default function Footer() {
             <ul className="footer-links">
               <li><a href="tel:09076860852">09076860852</a></li>
               <li><a href="https://wa.me/2349076860852" target="_blank" rel="noopener noreferrer">WhatsApp: 09076860852</a></li>
+              <li><a href="https://www.instagram.com/deluxe_skincare?igsh=MWJzYmpta3gwbTJmeg==" target="_blank" rel="noopener noreferrer">Instagram</a></li>
               <li><a href="mailto:deluxe.skincareng@gmail.com">deluxe.skincareng@gmail.com</a></li>
             </ul>
           </div>

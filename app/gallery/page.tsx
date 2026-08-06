@@ -35,7 +35,7 @@ const beforeAfterCases = [
     title: 'Laser Hair Removal Results',
     concern: 'Improved smoothness after 4 sessions',
     beforeImage: '/images/wax1.jpeg',
-    afterImage: '/images/wax.jpeg',
+    afterImage: '/images/Wax.jpeg',
     beforeLabel: 'Before Laser',
     afterLabel: 'After 4 Sessions',
   },
@@ -44,21 +44,21 @@ const beforeAfterCases = [
 const testimonialHighlights = [
   {
     id: 'gallery-testimonial-1',
-    quote: 'I stopped hiding my skin. The team built a simple treatment roadmap for me, and my acne marks are now much lighter.',
-    author: 'Amara U.',
-    treatment: 'Corrective Acne Treatment Combo',
+    quote: 'This is my 9th time here. Wonderful job. Amazing staff. Serene environment and very professional. I recommend.',
+    author: 'Prima Cute',
+    treatment: 'Google Review',
   },
   {
     id: 'gallery-testimonial-2',
-    quote: 'My face looks brighter and healthier, but still natural. The aftercare guidance was the biggest game changer for me.',
-    author: 'Kemi A.',
-    treatment: 'Vitamin C Brightening Facial Series',
+    quote: 'Really great service. The staff are warm and professional and the entire session went really smoothly. Definitely recommend.',
+    author: 'Jasmine Olorunfemi',
+    treatment: 'Google Review',
   },
   {
     id: 'gallery-testimonial-3',
-    quote: 'Laser sessions were quick and consistent. I noticed less growth early, and the skin texture in that area is smoother now.',
-    author: 'Deborah E.',
-    treatment: 'Laser Hair Removal Program',
+    quote: 'I’ve had such a great experience at this spa. The environment and ambience are absolutely beautiful—calm, clean, and very welcoming. My skin has improved significantly since I started coming here. The results speak for themselves. The team is professional, attentive, and clearly knows what they’re doing. The treatments are very effective. Highly recommend!',
+    author: 'Mercy Julius',
+    treatment: 'Google Review',
   },
 ];
 

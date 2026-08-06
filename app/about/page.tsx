@@ -60,9 +60,8 @@ export default function AboutPage() {
                   style={{ objectFit: 'cover' }}
                 />
                 <div className="about-intro-overlay">
-                  <p className="about-intro-overlay-top">Clinical Precision</p>
-                  <p className="about-intro-overlay-title">Skin</p>
-                  <p className="about-intro-overlay-bottom">Science-backed. Results-driven.</p>
+                  <p className="about-intro-overlay-top">Evidence-Based Treatments</p>
+                  <p className="about-intro-overlay-bottom">Personalized for You</p>
                 </div>
               </div>
 

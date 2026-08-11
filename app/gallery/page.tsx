@@ -86,7 +86,7 @@ const imagePairs = [
     id: 'proof-4',
     title: 'Laser Completion',
     beforeImage: '/images/wax1.jpeg',
-    afterImage: '/images/wax.jpeg',
+    afterImage: '/images/Wax.jpeg',
   },
   {
     id: 'proof-5',

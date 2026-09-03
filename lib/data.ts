@@ -10,7 +10,7 @@ export interface Product {
 export interface Service {
   name: string;
   duration: string;
-  price: number;
+  price: number | string;
 }
 
 export interface ServiceCategory {
@@ -72,30 +72,34 @@ export const serviceCategories: ServiceCategory[] = [
   {
     title: "Chemical Peel",
     services: [
-      { name: "Salicylic Acid Peel", duration: "50 min", price: 65000 },
-      { name: "Mandelic Acid Peel", duration: "45 min", price: 65000 },
-      { name: "Tranexamic Acid Peel", duration: "1 hr", price: 65000 },
-      { name: "Tretinoin Peel", duration: "1 hr", price: 65000 },
-      { name: "Kojic Acid Peel", duration: "1 hr", price: 65000 },
-      { name: "Jessner Cocktail Peel", duration: "1 hr", price: 75000 },
-      { name: "Micro Needling + Peel", duration: "1 hr", price: 160500 },
-      { name: "Deluxe Glass Skin Micro Needling", duration: "1 hr", price: 280500 },
-      { name: "Knee Peel", duration: "1 hr", price: 150950 },
-      { name: "Elbow Peel", duration: "1 hr", price: 130950 },
-      { name: "Knuckle Peel", duration: "1 hr", price: 130500 },
-      { name: "Feet Peel", duration: "1 hr", price: 225000 },
-      { name: "Nano Needling", duration: "1 hr", price: 95000 },
-      { name: "Micro Needling (PRP)", duration: "1 hr", price: 150500 },
-      { name: "Micro Needling", duration: "1 hr", price: 100500 },
-      { name: "Micro Needling + TCA Cross", duration: "1 hr", price: 200500 },
-      { name: "Corrective Acne Treatment", duration: "1 hr", price: 80950 },
-      { name: "Corrective Acne Treatment Combo", duration: "1 hr", price: 110950 },
-      { name: "Depigmenting Treatment", duration: "1 hr", price: 105000 },
-      { name: "TCA Peel", duration: "1 hr", price: 100500 },
-      { name: "CAT Protocol (3 mths)", duration: "1 hr", price: 995000 },
-      { name: "DPT Protocol (3 mths)", duration: "1 hr", price: 980000 },
-      { name: "Cosmelan / Perfect Peel / Back", duration: "1 hr", price: 0 },
-      { name: "Back Peel / Chest Peel", duration: "1 hr", price: 0 },
+      { name: "Salicylic Acid Peel", duration: "1 hr", price: 70000 },
+      { name: "Mandelic Acid Peel", duration: "1 hr", price: 70000 },
+      { name: "Tranexamic Acid Peel", duration: "1 hr", price: 70000 },
+      { name: "Retinol Peel", duration: "1 hr", price: 70000 },
+      { name: "Retinol Plus Peel", duration: "1 hr", price: 241000 },
+      { name: "Kojic Acid Peel", duration: "1 hr", price: 70000 },
+      { name: "Jessner Cocktail Peel", duration: "1 hr", price: 85000 },
+      { name: "Knee Peel", duration: "1 hr", price: 160950 },
+      { name: "Elbow Peel", duration: "1 hr", price: 160950 },
+      { name: "Knuckle Peel", duration: "1 hr", price: "165500 / 265950" },
+      { name: "Feet Peel", duration: "1 hr", price: 285950 },
+      { name: "Nano Needling", duration: "1 hr", price: 160500 },
+      { name: "Microneedling Hyaluronic", duration: "1 hr", price: 171000 },
+      { name: "Microneedling (PRP)", duration: "1 hr", price: 235000 },
+      { name: "Microneedling + TCA Cross", duration: "1 hr", price: 300500 },
+      { name: "Microneedling + Peel", duration: "1 hr", price: 240950 },
+      { name: "Microneedling with Exosomes", duration: "1 hr", price: 248500 },
+      { name: "Deluxe Glass Skin Microneedling", duration: "1 hr", price: 380500 },
+      { name: "Corrective Acne Treatment", duration: "1 hr", price: 85950 },
+      { name: "Corrective Acne Treatment (Combo)", duration: "1 hr", price: 130950 },
+      { name: "Depigmenting Treatment", duration: "1 hr", price: 145950 },
+      { name: "TCA Peel", duration: "1 hr", price: 150500 },
+      { name: "Chest Acne Depigmenting Peel", duration: "1 hr", price: 300500 },
+      { name: "Back Acne Depigmenting Peel", duration: "1 hr", price: 420950 },
+      { name: "De Melan Peel", duration: "1 hr", price: 395950 },
+      { name: "Cosmelan", duration: "1 hr", price: "TBD" },
+      { name: "CAT Protocol (3 months)", duration: "3 months", price: 1100000 },
+      { name: "DPT Protocol (3 months)", duration: "3 months", price: 1450000 },
     ]
   },
   {

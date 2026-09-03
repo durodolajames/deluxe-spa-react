@@ -1,6 +1,16 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import HorizontalGallery from '@/components/HorizontalGallery';
+
+export const metadata: Metadata = {
+  title: 'About Deluxe Skincare Lekki | Luxury Spa & Skin Clinic',
+  description:
+    'Learn about Deluxe Skincare Lekki, a luxury spa and skin clinic in Lekki Phase 1 offering personalized treatments for healthier, radiant skin.',
+  alternates: {
+    canonical: 'https://www.deluxeskincare.com.ng/about',
+  },
+};
 
 const aboutGalleryItems = [
   { id: 1, src: '/images/1.jpeg', alt: 'Deluxe gallery image 1' },

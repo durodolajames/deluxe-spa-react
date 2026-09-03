@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { products } from '@/lib/data';
@@ -5,6 +6,15 @@ import AddToCartButton from '@/components/AddToCartButton';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 import ImpactStats from '@/components/ImpactStats';
 import TreatmentCarousel from '@/components/TreatmentCarousel';
+
+export const metadata: Metadata = {
+  title: 'Luxury Spa & Skin Clinic in Lekki Phase 1, Lagos',
+  description:
+    'Experience luxury facials, body waxing, manicure, pedicure, chemical peels, microneedling, Moroccan Hammam and advanced skin treatments in Lekki.',
+  alternates: {
+    canonical: 'https://www.deluxeskincare.com.ng',
+  },
+};
 
 const beforeAfterCases = [
   {

@@ -4,6 +4,7 @@ import { useState, useMemo } from 'react';
 import { serviceCategories } from '@/lib/data';
 
 const normalizeServiceName = (name: string) => name.toLowerCase().replace(/[^a-z0-9+]+/g, ' ').trim();
+const formatServicePrice = (price: number | string) => typeof price === 'number' ? `₦${price.toLocaleString()}` : price;
 
 const serviceDescriptionMap = new Map<string, string>([
   ['skincare consultation', 'A personalized skin assessment with expert guidance on routines, treatment plans, and product recommendations for your skin goals.'],
@@ -30,30 +31,34 @@ const serviceDescriptionMap = new Map<string, string>([
   ['luminous skin glutathione drip', 'A powerful glutathione infusion that brightens skin, treats hyperpigmentation, repairs skin, and promotes overall wellness.'],
   ['nad+ therapy', 'Cellular rejuvenation infusion that supports skin renewal, enhances radiance, improves texture, boosts energy, mental clarity, and longevity.'],
   ['deluxe glow drip', 'Signature IV infusion for radiant skin, hydration, increased energy, and overall wellness.'],
-  ['salicylic acid peel', 'Chemical peel requiring consultation and skin prep before treatment.'],
-  ['mandelic acid peel', 'Chemical peel requiring consultation and skin prep before treatment.'],
-  ['tranexamic acid peel', 'Chemical peel requiring consultation and skin prep before treatment.'],
-  ['tretinoin peel', 'Chemical peel requiring consultation and skin prep before treatment.'],
-  ['kojic acid peel', 'Chemical peel requiring consultation and skin prep before treatment.'],
-  ['jessner cocktail peel', 'Advanced medium-depth peel designed to improve texture, acne marks, and uneven pigmentation after proper consultation.'],
-  ['micro needling + peel', 'Microneedling combined with a chemical peel after consultation and skin preparation.'],
-  ['deluxe glass skin micro needling', 'A premium microneedling protocol designed to refine texture, boost glow, and support a smooth glass-skin finish.'],
-  ['knee peel', 'Chemical peel for knees requiring consultation and preparation.'],
-  ['elbow peel', 'Chemical peel for elbows requiring consultation and preparation.'],
-  ['knuckle peel', 'Targeted corrective peel treatment for dark or rough knuckles to improve tone and texture progressively.'],
-  ['feet peel', 'Exfoliating foot peel treatment that softens rough skin and improves the appearance of dry, thickened areas.'],
-  ['nano needling', 'A gentle transdermal infusion treatment that improves hydration, texture, and overall skin radiance with minimal downtime.'],
-  ['micro needling prp', 'Microneedling with PRP to support collagen renewal, improve scars, and speed up skin recovery.'],
-  ['micro needling', 'Collagen-induction treatment that helps improve texture, acne scars, pores, and overall skin firmness.'],
-  ['micro needling + tca cross', 'Scar-focused treatment combining microneedling with TCA CROSS technique for deeper acne scar correction.'],
-  ['corrective acne treatment', 'Targeted corrective protocol for active acne, congestion, and inflammation with professional extraction and skin support.'],
-  ['corrective acne treatment combo', 'Comprehensive acne management combining multiple corrective techniques for stubborn or recurring breakouts.'],
-  ['depigmenting treatment', 'Chemical peel protocol for pigmentation requiring consultation and skin preparation.'],
-  ['tca peel', 'Chemical peel requiring consultation and skin preparation.'],
-  ['cat protocol 3 mths', 'Comprehensive 3-month corrective acne therapy protocol with structured treatment sessions and follow-up support.'],
-  ['dpt protocol 3 mths', 'A focused 3-month depigmentation therapy plan designed to improve uneven tone and persistent discoloration.'],
-  ['cosmelan perfect peel back', 'Professional back treatment plan using corrective peel protocols for stubborn body pigmentation and uneven texture.'],
-  ['back peel chest peel', 'Corrective peel for back or chest to target texture, breakouts, and hyperpigmentation.'],
+  ['salicylic acid peel', 'A beta-hydroxy acid (BHA) that exfoliates the skin and helps unclog pores, working particularly well for oily and acne-prone skin.'],
+  ['mandelic acid peel', 'An alpha-hydroxy acid (AHA) that gently exfoliates, improves uneven tone and texture, and helps reduce acne. It is particularly suited for sensitive, acne-prone, and pigmentation-prone skin.'],
+  ['tranexamic acid peel', 'A targeted peel that helps improve the appearance of hyperpigmentation, dark spots, and uneven skin tone.'],
+  ['retinol peel', 'A powerful regenerating and repairing peel that stimulates collagen and elastin synthesis, reducing wrinkles and expression lines while improving smoothness and elasticity.'],
+  ['retinol plus peel', 'Combines microneedling, hyaluronic acid infusion, and a retinol peel to stimulate renewal, boost hydration, and support collagen production for a smoother, brighter complexion.'],
+  ['kojic acid peel', 'A superficial peel that helps reduce the appearance of hyperpigmentation, dark spots, and uneven skin tone.'],
+  ['jessner cocktail peel', 'An advanced resurfacing treatment combining lactic acid, salicylic acid, and resorcinol to refine texture, improve uneven tone, and address acne, congestion, and hyperpigmentation.'],
+  ['knee peel', 'A targeted depigmenting treatment designed to correct uneven skin tone and hyperpigmentation on the knees.'],
+  ['elbow peel', 'A targeted depigmenting treatment designed to correct uneven skin tone and hyperpigmentation on the elbows.'],
+  ['knuckle peel', 'Combines AHA and depigmenting agents to improve dark, uneven pigmentation for brighter, more even-toned knuckles.'],
+  ['feet peel', 'A targeted depigmenting treatment designed to correct uneven skin tone and hyperpigmentation on the feet.'],
+  ['nano needling', 'A non-invasive rejuvenation treatment that creates nano-channels to enhance product absorption, allowing active ingredients to penetrate more effectively for a smoother, brighter complexion.'],
+  ['microneedling hyaluronic', 'A rejuvenating treatment for dehydrated, dull, and ageing skin. It combines microneedling with hydrating ingredients to restore moisture, improve texture, enhance radiance, and promote a youthful complexion.'],
+  ['microneedling prp', 'Combines microneedling with blood-derived growth factors to stimulate repair and collagen production, improve acne scars, reduce fine lines and wrinkles, refine texture, and improve hair growth.'],
+  ['microneedling + tca cross', 'Combines collagen-inducing microneedling with targeted TCA application to improve atrophic acne scars and enlarged pores for a smoother complexion.'],
+  ['microneedling + peel', 'Combines microneedling with a peel to enhance renewal, improve texture, and address skin concerns through micro-channels, controlled exfoliation, and regeneration.'],
+  ['microneedling with exosomes', 'Combines microneedling with topical exosomes containing growth factors and peptides to improve texture and dull tone while reducing fine lines and wrinkles.'],
+  ['deluxe glass skin microneedling', 'Combines microneedling, PRP, and Botox to promote collagen renewal, refine pores, and improve texture and firmness for a smoother, plumper, more radiant complexion.'],
+  ['corrective acne treatment', 'An intensive acne-focused treatment combining professional extractions with a customized chemical peel to control breakouts, decongest pores, and reduce inflammation.'],
+  ['corrective acne treatment combo', 'Combines gentle extractions with a dual-peel treatment to target active acne, decongest pores, reduce inflammation, and control excess oil.'],
+  ['depigmenting treatment', 'Begins with gentle extractions followed by a customized depigmenting peel to address hyperpigmentation, dark spots, and uneven tone.'],
+  ['tca peel', 'A professional resurfacing treatment using trichloroacetic acid (TCA) to improve pigmentation, uneven texture, acne scarring, and signs of ageing.'],
+  ['chest acne depigmenting peel', 'Combines AHA, BHA, and De Melan peel to target active acne, unclog pores, and improve post-acne marks and hyperpigmentation.'],
+  ['back acne depigmenting peel', 'Combines AHA, BHA, and De Melan peel to target active acne, unclog pores, and improve post-acne marks and hyperpigmentation.'],
+  ['de melan peel', 'A customized depigmenting treatment for moderate to severe pigmentation, targeting melasma, hyperpigmentation, and post-inflammatory hyperpigmentation while restoring a brighter complexion.'],
+  ['cosmelan', 'A professional depigmenting treatment for stubborn pigmentation that inhibits excess melanin production and promotes skin renewal for improved clarity and tone.'],
+  ['cat protocol 3 months', 'A structured, intensive acne-management program with personalized treatments every two weeks for three months, including tailored extractions and chemical peels.'],
+  ['dpt protocol 3 months', 'An intensive pigmentation-correction program with targeted treatments every two weeks for three months, combining depigmenting peels, microneedling, and corrective treatments.'],
   ['deluxe jelly pedicure', 'Relaxing jelly pedicure that softens skin, refreshes tired feet, and leaves a smooth polished finish.'],
   ['classic pedicure', 'Essential foot grooming and nail care treatment with exfoliation, cleanup, and polish-ready finishing.'],
   ['manicure', 'Professional hand and nail grooming service for clean, healthy, and beautifully finished nails.'],
@@ -75,7 +80,15 @@ const serviceDescriptionMap = new Map<string, string>([
 const getServiceDescription = (serviceName: string, categoryTitle: string) => {
   const key = normalizeServiceName(serviceName);
   const directDescription = serviceDescriptionMap.get(key);
-  if (directDescription) return directDescription;
+  if (directDescription) {
+    return categoryTitle === 'Chemical Peel'
+      ? `${directDescription} Chemical peels require consultation and skin prep before treatment.`
+      : directDescription;
+  }
+
+  if (categoryTitle === 'Chemical Peel') {
+    return 'Chemical peels require consultation and skin prep before treatment.';
+  }
 
   if (categoryTitle === 'Laser Treatment') {
     return `Laser hair removal service for ${serviceName.toLowerCase()} to reduce unwanted hair growth and support smoother skin over time.`;
@@ -206,6 +219,7 @@ export default function ServicesPage() {
                     <div className={`service-item fade-up d${(index % 5) + 1}`} key={`${cat.title}-${service.name}-${index}`}>
                       <div className="service-item-left">
                         <div className="service-item-name">{service.name}</div>
+                        <div className="service-item-price">{formatServicePrice(service.price)}</div>
                         <div className="service-item-dur">{service.duration}</div>
                         <p className="service-item-desc">{getServiceDescription(service.name, cat.title)}</p>
                         <div className="service-item-add service-item-add-locations">

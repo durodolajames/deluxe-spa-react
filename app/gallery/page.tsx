@@ -1,6 +1,16 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider';
+
+export const metadata: Metadata = {
+  title: 'Gallery & Testimonials | Deluxe Skincare Lekki',
+  description:
+    'Browse before-and-after treatment results, client testimonials, and real transformations from Deluxe Skincare Lekki in Lagos.',
+  alternates: {
+    canonical: 'https://www.deluxeskincare.com.ng/gallery',
+  },
+};
 
 const beforeAfterCases = [
   {

@@ -81,7 +81,7 @@ export const serviceCategories: ServiceCategory[] = [
       { name: "Jessner Cocktail Peel", duration: "1 hr", price: 85000 },
       { name: "Knee Peel", duration: "1 hr", price: 160950 },
       { name: "Elbow Peel", duration: "1 hr", price: 160950 },
-      { name: "Knuckle Peel", duration: "1 hr", price: "165500 / 265950" },
+      { name: "Knuckle Peel", duration: "1 hr", price: "₦165,500/₦265,950" },
       { name: "Feet Peel", duration: "1 hr", price: 285950 },
       { name: "Nano Needling", duration: "1 hr", price: 160500 },
       { name: "Microneedling Hyaluronic", duration: "1 hr", price: 171000 },

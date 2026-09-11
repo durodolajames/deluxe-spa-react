@@ -83,13 +83,8 @@ export const serviceCategories: ServiceCategory[] = [
       { name: "Elbow Peel", duration: "1 hr", price: 160950 },
       { name: "Knuckle Peel", duration: "1 hr", price: "₦165,500/₦265,950" },
       { name: "Feet Peel", duration: "1 hr", price: 285950 },
-      { name: "Nano Needling", duration: "1 hr", price: 160500 },
-      { name: "Microneedling Hyaluronic", duration: "1 hr", price: 171000 },
-      { name: "Microneedling (PRP)", duration: "1 hr", price: 235000 },
       { name: "Microneedling + TCA Cross", duration: "1 hr", price: 300500 },
       { name: "Microneedling + Peel", duration: "1 hr", price: 240950 },
-      { name: "Microneedling with Exosomes", duration: "1 hr", price: 248500 },
-      { name: "Deluxe Glass Skin Microneedling", duration: "1 hr", price: 380500 },
       { name: "Corrective Acne Treatment", duration: "1 hr", price: 85950 },
       { name: "Corrective Acne Treatment (Combo)", duration: "1 hr", price: 130950 },
       { name: "Depigmenting Treatment", duration: "1 hr", price: 145950 },
@@ -100,6 +95,16 @@ export const serviceCategories: ServiceCategory[] = [
       { name: "Cosmelan", duration: "1 hr", price: "TBD" },
       { name: "CAT Protocol (3 months)", duration: "3 months", price: 1100000 },
       { name: "DPT Protocol (3 months)", duration: "3 months", price: 1450000 },
+    ]
+  },
+  {
+    title: "Microneedling",
+    services: [
+      { name: "Nano Needling", duration: "1 hr", price: 160500 },
+      { name: "Microneedling Hyaluronic", duration: "1 hr", price: 171000 },
+      { name: "Microneedling (PRP)", duration: "1 hr", price: 235000 },
+      { name: "Microneedling with Exosomes", duration: "1 hr", price: 248500 },
+      { name: "Deluxe Glass Skin Microneedling", duration: "1 hr", price: 380500 },
     ]
   },
   {

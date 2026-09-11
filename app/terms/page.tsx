@@ -30,7 +30,9 @@ export default function TermsPage() {
           <section className="fade-up d3">
             <h2 className="headline-sm" style={{ marginBottom: 8 }}>3. Appointments and Payments</h2>
             <p className="body-md">
-              Appointments may require confirmation and payment according to our booking process. Please contact us directly for current payment and cancellation details.
+              Appointments may require confirmation and payment according to our booking process. Please review our{' '}
+              <Link href="/cancellation-refund-policy">Cancellation &amp; Refund Policy</Link>{' '}
+              for details about appointment changes and refunds.
             </p>
           </section>
 

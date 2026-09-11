@@ -21,6 +21,7 @@ export default function Footer() {
               <li><Link href="/about">About</Link></li>
               <li><Link href="/contact">Contact</Link></li>
               <li><Link href="/privacy-policy">Privacy Policy</Link></li>
+              <li><Link href="/cancellation-refund-policy">Cancellation &amp; Refund Policy</Link></li>
               <li><Link href="/terms">Terms &amp; Conditions</Link></li>
             </ul>
           </div>
@@ -47,6 +48,8 @@ export default function Footer() {
           <span>© 2026 Deluxe Skin Care. All rights reserved.</span>
           <span>
             <Link href="/privacy-policy">Privacy Policy</Link>
+            {' '}|{' '}
+            <Link href="/cancellation-refund-policy">Cancellation &amp; Refund Policy</Link>
             {' '}|{' '}
             <Link href="/terms">Terms &amp; Conditions</Link>
           </span>
